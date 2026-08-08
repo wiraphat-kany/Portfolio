@@ -1,0 +1,607 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* ── Unified design tokens ─────────────────────────────── */
+  --bg-primary: #0D0B1A;
+  --bg-alt: #120F24;
+  --accent: #7C6FF7;
+  --accent-soft: #a78bfa;
+  --accent-pink: #c084fc;
+  --text-heading: #ffffff;
+  --text-body: #C8C7E8;
+  --text-muted: #8b7fa8;
+  --border-soft: rgba(255, 255, 255, 0.08);
+  --border-accent: rgba(124, 111, 247, 0.35);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 76px;
+}
+
+body {
+  background-color: var(--bg-primary);
+  /* clip ไม่ใช่ hidden — hidden จะสร้าง scroll container ใหม่ ทำให้ navbar sticky พัง */
+  overflow-x: clip;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ── Shared section header pattern ───────────────────────── */
+.section-eyebrow {
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.section-heading {
+  text-align: center;
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  font-weight: 800;
+  color: var(--text-heading);
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+}
+
+/* ช่องไฟใต้หัวข้อเดิมมาจาก .section-sub (margin-bottom 40px) พอถอดคำอธิบายออก
+   หัวข้อที่ไม่มีอะไรตามหลังต้องรับระยะนั้นมาเอง ไม่งั้นหัวข้อจะไปติดกับเนื้อหา */
+.section-heading:last-child {
+  margin-bottom: 44px;
+}
+
+.section-sub {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  max-width: 32rem;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+.section-glow {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 560px;
+  height: 260px;
+  background: radial-gradient(ellipse, rgba(124, 111, 247, 0.08) 0%, transparent 72%);
+  pointer-events: none;
+}
+
+/* ── Shared card treatment — layered shadow + inset highlight for depth,
+     instead of a flat neon-glow border (reads less templated/AI-generic) ── */
+.uv-card {
+  transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.32s ease, box-shadow 0.32s ease;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 1px 2px rgba(0, 0, 0, 0.4),
+    0 18px 36px -18px rgba(0, 0, 0, 0.65);
+}
+.uv-card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 2px 4px rgba(0, 0, 0, 0.45),
+    0 26px 48px -16px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(124, 111, 247, 0.25);
+}
+
+/* ── Scroll reveal ───────────────────────────────────────── */
+/* translate3d + opacity เท่านั้น = งานทั้งหมดอยู่บน compositor ไม่แตะ layout/paint */
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+  transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+  backface-visibility: hidden;
+}
+/* will-change เฉพาะตัวที่ยังไม่โผล่ — ถอนออกทันทีที่จบ จะได้ไม่กิน GPU memory ทั้งหน้า */
+.reveal:not(.is-visible) {
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  will-change: auto;
+}
+
+/* เบราว์เซอร์ที่รองรับ scroll-driven animation จะผูกอนิเมชันกับตำแหน่งสกอลล์โดยตรง
+   รันบน compositor thread ไม่ผ่าน main thread เลย → ลื่นเต็มเฟรมเรตจอ */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      transition: none;
+      animation: reveal-in linear both;
+      animation-timeline: view();
+      animation-range: entry 4% entry 62%;
+    }
+  }
+}
+
+@keyframes reveal-in {
+  from { opacity: 0; transform: translate3d(0, 24px, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+/* ล็อกสกอลล์ตอนเปิด modal — ใช้ overflow-y เท่านั้น เพื่อไม่ให้ทับ overflow-x: clip */
+body.modal-open {
+  overflow-y: hidden;
+}
+
+/* สำคัญ: พอสกอลล์ถูกล็อก view() timeline จะไม่มีระยะให้คำนวณ ทุก .reveal เลยรีเซ็ตกลับไป
+   opacity: 0 = เนื้อหาทั้งหน้าหายวับ ต้องหยุดอนิเมชันแล้วตรึงไว้ที่สถานะปลายทาง */
+body.modal-open .reveal {
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+  will-change: auto !important;
+}
+
+/* เลเยอร์เรืองแสงถูกแคชเป็นเท็กซ์เจอร์ ไม่ต้อง rasterize blur ใหม่ทุกเฟรมตอนเลื่อน */
+.section-glow,
+.hero-photo::before {
+  transform: translateZ(0);
+  will-change: transform;
+}
+.section-glow {
+  transform: translateX(-50%) translateZ(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    animation: none;
+    will-change: auto;
+  }
+}
+
+/* ── Accessibility: visible keyboard focus (WCAG 2.4.7) ──── */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--accent-soft);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── Skip-to-content link (WCAG 2.4.1 Bypass Blocks) ─────── */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 100;
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* ── Respect reduced-motion for the auto-scrolling ticker ── */
+@media (prefers-reduced-motion: reduce) {
+  .lp-ticker-row {
+    animation: none !important;
+  }
+}
+
+/* ── Certificate modal ───────────────────────────────────── */
+@keyframes certFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes certPopIn {
+  from { opacity: 0; transform: translateY(16px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ── Banner terminal-typer flourish ──────────────────────── */
+.terminal-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(124, 111, 247, 0.25);
+  border-radius: 8px;
+  max-width: 100%;
+  overflow: hidden;
+}
+.terminal-dots {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.terminal-dots span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: block;
+}
+.terminal-text {
+  font-family: 'Fira Code', 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.78rem;
+  color: var(--accent-soft);
+  white-space: nowrap;
+  overflow: hidden;
+}
+.terminal-cursor {
+  display: inline-block;
+  margin-left: 2px;
+  color: var(--accent-pink);
+  animation: terminal-blink 1s step-end infinite;
+}
+@keyframes terminal-blink {
+  50% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .terminal-cursor { animation: none; }
+}
+
+
+/* ── Banner profile photo ─────────────────────────────────── */
+.hero-photo {
+  position: relative;
+  width: min(360px, 74vw);
+  aspect-ratio: 4 / 5;
+  margin-inline: auto;
+  isolation: isolate;
+}
+
+/* soft aura that bleeds into the banner background — no hard frame */
+.hero-photo::before {
+  content: '';
+  position: absolute;
+  inset: -18%;
+  background: radial-gradient(
+    ellipse 62% 55% at 50% 34%,
+    rgba(124, 111, 247, 0.42) 0%,
+    rgba(192, 132, 252, 0.16) 45%,
+    transparent 75%
+  );
+  filter: blur(14px);
+  z-index: -1;
+}
+
+.hero-photo-disc {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(8, 6, 20, 0.55);
+}
+
+.hero-photo-disc img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* ── Project cards → detail modal ─────────────────────────── */
+.project-card:focus-visible {
+  outline: 2px solid var(--accent-soft);
+  outline-offset: 3px;
+}
+
+.project-card-hint {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 26px 16px 12px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(to top, rgba(10, 8, 24, 0.88), transparent);
+  opacity: 0;
+  transition: opacity 0.18s ease;
+  pointer-events: none;
+}
+.project-card:hover .project-card-hint,
+.project-card:focus-visible .project-card-hint {
+  opacity: 1;
+}
+
+.project-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(6, 5, 16, 0.78);
+  backdrop-filter: blur(6px);
+  animation: modal-in 0.16s ease-out;
+}
+
+.project-modal {
+  position: relative;
+  width: min(820px, 100%);
+  max-height: 88vh;
+  overflow-y: auto;
+  border-radius: 20px;
+  border: 1px solid rgba(124, 111, 247, 0.35);
+  background: #16112f;
+  box-shadow: 0 30px 80px rgba(4, 3, 12, 0.7);
+  outline: none;
+}
+
+/* หน้าตามาจาก .btn-icon — ตรงนี้เหลือแค่การวางตำแหน่งทับบนภาพ */
+.project-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+}
+
+.project-modal-hero {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+.project-modal-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.project-modal-hero-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, #16112f 4%, rgba(22, 17, 47, 0.55) 40%, transparent 75%);
+}
+.project-modal-hero-text {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 18px;
+}
+
+.project-modal-body {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 28px 28px;
+}
+
+/* hairline divider between every section so it stops reading as one block */
+.project-modal-body > * + * {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+.project-modal-body > .project-modal-actions {
+  border-top: none;
+  padding-top: 8px;
+}
+
+/* section heading: no uppercase, no letter-spacing — Thai needs both left alone */
+.project-modal-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+.project-modal-heading::before {
+  content: '';
+  width: 3px;
+  height: 17px;
+  border-radius: 2px;
+  background: currentColor;
+}
+
+.project-modal-label {
+  display: block;
+  font-size: 0.84rem;
+  font-weight: 600;
+  line-height: 1.7;
+  color: #9d98cf;
+}
+
+.project-modal-meta p {
+  margin-top: 4px;
+  color: #eceaff;
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+.project-modal-text {
+  color: #d3d1ee;
+  font-size: 1rem;
+  line-height: 2;
+}
+
+.project-modal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.project-modal-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: #d3d1ee;
+  font-size: 0.98rem;
+  line-height: 1.85;
+}
+.project-modal-list .bullet {
+  flex: 0 0 auto;
+  width: 7px;
+  height: 7px;
+  margin-top: 11px;
+  border-radius: 50%;
+}
+
+.project-modal-stack {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 20px 24px;
+}
+
+/* chips inside the modal need to be bigger than the ones on the cards */
+.project-modal-body .rounded-full {
+  font-size: 0.86rem;
+  padding: 5px 14px;
+  line-height: 1.7;
+}
+
+.project-modal-note {
+  padding: 14px 16px;
+  border-radius: 10px;
+  font-size: 0.92rem;
+  line-height: 1.85;
+  color: #c2bee8;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.project-modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 4px;
+}
+
+
+@keyframes modal-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@media (max-width: 640px) {
+  .project-modal { max-height: 92vh; border-radius: 16px; }
+  .project-modal-body { padding: 20px 18px 24px; }
+  .project-modal-body > * + * { margin-top: 20px; padding-top: 20px; }
+  .project-modal-hero { aspect-ratio: 16 / 10; }
+  .project-modal-heading { font-size: 0.98rem; }
+  .project-modal-text,
+  .project-modal-meta p { font-size: 0.96rem; }
+}
+
+/* ── ปุ่ม: ระบบเดียวใช้ทั้งเว็บ ────────────────────────────
+   เดิมมีมุมโค้ง 6 ค่า (4/8/10/12/pill/วงกลม) สีหลัก 2 ค่าที่ไม่ตรงกัน
+   และขนาดตัวอักษร 5 ค่า — รวมเหลือชุดเดียว 3 ระดับความสำคัญ
+   จงใจไม่ใส่ gradient / neon glow / scale เด้ง เพราะมันคือสิ่งที่ทำให้
+   งานดู "เจนมา" ความโดดเด่นมาจากสีเดียวที่ใช้อย่างมีวินัยแทน */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 11px 20px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.5;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+.btn:active { transform: translateY(1px); }
+
+.btn-sm { padding: 8px 15px; font-size: 0.8125rem; gap: 8px; }
+.btn-lg { padding: 14px 26px; font-size: 0.9375rem; }
+
+/* หนึ่งหน้าจอควรมีปุ่มนี้ตัวเดียว — ถ้ามีสองตัวก็ไม่มีอะไรโดดเด่น */
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+.btn-primary:hover { background: #6a5cf0; }
+
+.btn-ghost {
+  background: transparent;
+  border-color: rgba(167, 139, 250, 0.38);
+  color: var(--accent-soft);
+}
+.btn-ghost:hover {
+  background: rgba(124, 111, 247, 0.1);
+  border-color: rgba(167, 139, 250, 0.65);
+}
+
+.btn-subtle {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #c6c2e6;
+}
+.btn-subtle:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.btn.is-active {
+  background: var(--accent);
+  border-color: transparent;
+  color: #fff;
+}
+
+.btn:disabled,
+.btn.is-disabled {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #8b86ad;
+  cursor: default;
+  transform: none;
+}
+
+/* ลูกศรเป็นลายเซ็นของเว็บ ใช้เฉพาะ CTA หลัก ไม่หว่านทุกปุ่ม */
+.btn-arrow {
+  width: 13px;
+  height: 13px;
+  border-top: 1.5px solid currentColor;
+  border-right: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.18s ease;
+}
+.btn:hover .btn-arrow { transform: rotate(45deg) translate(2px, -2px); }
+
+/* ปุ่มไอคอนล้วน — ปิด modal, เลื่อนขึ้นบน */
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(16, 13, 36, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  transition: background-color 0.18s ease, transform 0.18s ease;
+}
+.btn-icon:hover { background: rgba(16, 13, 36, 0.95); }
+.btn-icon.is-solid {
+  background: var(--accent);
+  border-color: transparent;
+  backdrop-filter: none;
+}
+.btn-icon.is-solid:hover { background: #6a5cf0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .btn, .btn-arrow, .btn-icon { transition: none; }
+  .btn:active { transform: none; }
+}

@@ -1,0 +1,231 @@
+/* ============================================================
+   Lpphoto.css — Graphic Design section (hero + grid layout)
+   ============================================================ */
+
+/* ── Root — พื้นหลังเต็มจอ แต่เนื้อหาข้างในถูกครอบด้วย .lp-inner
+   (max-width + margin:auto) เหมือน section อื่นๆ ในเว็บ กันข้อความ/
+   ภาพชิดขอบจอจริงบนจอกว้าง ── */
+.lp-root {
+  background: var(--bg-alt);
+  position: relative;
+  overflow: hidden;
+  font-family: sans-serif;
+  padding: 72px 0;
+}
+
+.lp-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* ── Static duotone texture (processed from public/images/bg.webp) ── */
+.lp-texture {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.lp-texture-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(11, 8, 24, 0.65) 0%, rgba(8, 6, 18, 0.92) 60%, #0b0818 100%);
+  z-index: 0;
+}
+
+/* ── Accent line ─────────────────────────────────────────── */
+.lp-accent-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    #9b72f0 40%,
+    #5c2d9e,
+    transparent
+  );
+  z-index: 3;
+}
+
+/* ── Left side ───────────────────────────────────────────── */
+.lp-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.lp-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.lp-eyebrow-line {
+  width: 40px;
+  height: 1.5px;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+.lp-eyebrow-text {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.lp-title {
+  font-size: clamp(32px, 3.4vw, 50px);
+  font-weight: 600;
+  line-height: 1.1;
+  color: #f0ecff;
+}
+.lp-title-accent {
+  color: var(--accent-pink);
+  display: block;
+  margin-bottom: 22px;
+}
+
+.lp-desc {
+  font-size: 15px;
+  line-height: 1.85;
+  color: #8b7fa8;
+  max-width: 380px;
+  margin-bottom: 32px;
+}
+
+/* ── Stats row ───────────────────────────────────────────── */
+.lp-stats {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+}
+.lp-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.lp-stat-icon {
+  color: var(--accent-soft);
+  margin-bottom: 4px;
+}
+.lp-stat-value {
+  font-size: 26px;
+  font-weight: 700;
+  color: #f0ecff;
+  line-height: 1;
+}
+.lp-stat-label {
+  font-size: 11.5px;
+  color: #8b7fa8;
+  white-space: nowrap;
+}
+
+/* ── Button ──────────────────────────────────────────────── */
+/* ปุ่มย้ายไปใช้ระบบ .btn กลางใน index.css แล้ว */
+
+/* ── Right side — hero + grid ────────────────────────────── */
+.lp-right {
+  position: relative;
+}
+
+.lp-bento {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+
+/* ภาพต้นฉบับเป็นแบนเนอร์แนวนอน สัดส่วนจริงเฉลี่ย ~1.9:1 (อยู่ในช่วง 1.6-2.3:1)
+   ตั้งสัดส่วนการ์ดให้ใกล้เคียงค่านี้ + object-fit: cover แบบ crop น้อยที่สุด
+   แทนที่จะบังคับสัดส่วนที่ต่างจากต้นฉบับมากจนภาพดูเพี้ยน/มีขอบว่างเยอะ */
+.lp-bento-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(155, 114, 240, 0.2);
+  background: #1a1535;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 14px 28px -12px rgba(0, 0, 0, 0.6);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s, box-shadow 0.35s;
+  cursor: pointer;
+}
+.lp-bento-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(155, 114, 240, 0.75);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 22px 42px -14px rgba(139, 92, 246, 0.5);
+  z-index: 2;
+}
+.lp-bento-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  filter: saturate(1.08) contrast(1.02);
+  transition: filter 0.3s, transform 0.4s;
+}
+.lp-bento-card:hover img {
+  filter: saturate(1.18) contrast(1.04);
+  transform: scale(1.04);
+}
+
+.lp-bento-hero {
+  width: 100%;
+  aspect-ratio: 1.95 / 1;
+}
+
+.lp-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.lp-bento-grid .lp-bento-card {
+  aspect-ratio: 1.9 / 1;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .lp-inner { grid-template-columns: 1fr 1.1fr; gap: 28px; }
+}
+
+@media (max-width: 900px) {
+  .lp-inner {
+    grid-template-columns: 1fr;
+    padding: 0 24px;
+  }
+  .lp-root { padding: 48px 0; }
+  .lp-left {
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .lp-desc { margin-left: auto; margin-right: auto; }
+  .lp-stats { justify-content: center; }
+  .lp-stat { align-items: center; }
+  .lp-bento-hero { aspect-ratio: 16 / 9; }
+}
+
+@media (max-width: 560px) {
+  .lp-desc { font-size: 14px; max-width: 300px; }
+  .lp-stats { gap: 24px; }
+  .lp-stat-value { font-size: 22px; }
+  .lp-bento-grid { grid-template-columns: repeat(2, 1fr); }
+  .lp-bento-grid .lp-bento-card:nth-child(3) { display: none; }
+}
