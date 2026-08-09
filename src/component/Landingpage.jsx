@@ -10,20 +10,20 @@ const projects = [
     title: "ThaiTeacher AI",
     tags: ["React", "Vite", "AI API"],
     description:
-      "แพลตฟอร์มช่วยคุณครูไทยสร้างสื่อการสอนด้วย AI ทั้งแผนการสอน ใบงาน แบบทดสอบ และอินโฟกราฟิก อ้างอิงหลักสูตรแกนกลางฯ พร้อมตัวชี้วัด",
+      "เนเธเธฅเธ•เธเธญเธฃเนเธกเธเนเธงเธขเธเธธเธ“เธเธฃเธนเนเธ—เธขเธชเธฃเนเธฒเธเธชเธทเนเธญเธเธฒเธฃเธชเธญเธเธ”เนเธงเธข AI เธ—เธฑเนเธเนเธเธเธเธฒเธฃเธชเธญเธ เนเธเธเธฒเธ เนเธเธเธ—เธ”เธชเธญเธ เนเธฅเธฐเธญเธดเธเนเธเธเธฃเธฒเธเธดเธ เธญเนเธฒเธเธญเธดเธเธซเธฅเธฑเธเธชเธนเธ•เธฃเนเธเธเธเธฅเธฒเธเธฏ เธเธฃเนเธญเธกเธ•เธฑเธงเธเธตเนเธงเธฑเธ”",
     demo: "https://thai-teacher-ai.vercel.app/",
     github: "https://github.com/wiraphat-kany/thai-teacher-ai",
     accent: "#7C6FF7",
-    role: "Solo Developer — ออกแบบ UI, พัฒนา Frontend และเชื่อมต่อ AI API ทั้งหมด",
-    status: "เปิดใช้งานแล้ว",
+    role: "Solo Developer โ€” เธญเธญเธเนเธเธ UI, เธเธฑเธ’เธเธฒ Frontend เนเธฅเธฐเน€เธเธทเนเธญเธกเธ•เนเธญ AI API เธ—เธฑเนเธเธซเธกเธ”",
+    status: "เน€เธเธดเธ”เนเธเนเธเธฒเธเนเธฅเนเธง",
     overview:
-      "ครูไทยใช้เวลาไปกับการเตรียมสื่อการสอนค่อนข้างมาก ThaiTeacher AI จึงถูกสร้างขึ้นเพื่อย่นขั้นตอนนั้น เพียงเลือกวิชา ระดับชั้น และหัวข้อ ระบบจะสร้างแผนการสอน ใบงาน แบบทดสอบ อินโฟกราฟิก และรูปประกอบให้ครบชุดในไม่กี่นาที โดยอ้างอิงหลักสูตรแกนกลางฯ และระบุตัวชี้วัดให้ในทุกแผน",
+      "เธเธฃเธนเนเธ—เธขเนเธเนเน€เธงเธฅเธฒเนเธเธเธฑเธเธเธฒเธฃเน€เธ•เธฃเธตเธขเธกเธชเธทเนเธญเธเธฒเธฃเธชเธญเธเธเนเธญเธเธเนเธฒเธเธกเธฒเธ ThaiTeacher AI เธเธถเธเธ–เธนเธเธชเธฃเนเธฒเธเธเธถเนเธเน€เธเธทเนเธญเธขเนเธเธเธฑเนเธเธ•เธญเธเธเธฑเนเธ เน€เธเธตเธขเธเน€เธฅเธทเธญเธเธงเธดเธเธฒ เธฃเธฐเธ”เธฑเธเธเธฑเนเธ เนเธฅเธฐเธซเธฑเธงเธเนเธญ เธฃเธฐเธเธเธเธฐเธชเธฃเนเธฒเธเนเธเธเธเธฒเธฃเธชเธญเธ เนเธเธเธฒเธ เนเธเธเธ—เธ”เธชเธญเธ เธญเธดเธเนเธเธเธฃเธฒเธเธดเธ เนเธฅเธฐเธฃเธนเธเธเธฃเธฐเธเธญเธเนเธซเนเธเธฃเธเธเธธเธ”เนเธเนเธกเนเธเธตเนเธเธฒเธ—เธต เนเธ”เธขเธญเนเธฒเธเธญเธดเธเธซเธฅเธฑเธเธชเธนเธ•เธฃเนเธเธเธเธฅเธฒเธเธฏ เนเธฅเธฐเธฃเธฐเธเธธเธ•เธฑเธงเธเธตเนเธงเธฑเธ”เนเธซเนเนเธเธ—เธธเธเนเธเธ",
     highlights: [
-      "สร้างสื่อครบชุดจากหัวข้อเดียว — แผนการสอน ใบงาน แบบทดสอบ อินโฟกราฟิก",
-      "ครอบคลุม 8 กลุ่มสาระ ตั้งแต่ระดับ ป.1 ถึง ม.6",
-      "อ้างอิงหลักสูตรแกนกลางฯ พร้อมระบุตัวชี้วัดในทุกแผน",
-      "สร้างรูปภาพประกอบด้วย AI ให้เข้ากับเนื้อหาโดยอัตโนมัติ",
-      "ใช้งานได้ฟรี ไม่ต้องผูกบัตรเครดิต",
+      "เธชเธฃเนเธฒเธเธชเธทเนเธญเธเธฃเธเธเธธเธ”เธเธฒเธเธซเธฑเธงเธเนเธญเน€เธ”เธตเธขเธง โ€” เนเธเธเธเธฒเธฃเธชเธญเธ เนเธเธเธฒเธ เนเธเธเธ—เธ”เธชเธญเธ เธญเธดเธเนเธเธเธฃเธฒเธเธดเธ",
+      "เธเธฃเธญเธเธเธฅเธธเธก 8 เธเธฅเธธเนเธกเธชเธฒเธฃเธฐ เธ•เธฑเนเธเนเธ•เนเธฃเธฐเธ”เธฑเธ เธ.1 เธ–เธถเธ เธก.6",
+      "เธญเนเธฒเธเธญเธดเธเธซเธฅเธฑเธเธชเธนเธ•เธฃเนเธเธเธเธฅเธฒเธเธฏ เธเธฃเนเธญเธกเธฃเธฐเธเธธเธ•เธฑเธงเธเธตเนเธงเธฑเธ”เนเธเธ—เธธเธเนเธเธ",
+      "เธชเธฃเนเธฒเธเธฃเธนเธเธ เธฒเธเธเธฃเธฐเธเธญเธเธ”เนเธงเธข AI เนเธซเนเน€เธเนเธฒเธเธฑเธเน€เธเธทเนเธญเธซเธฒเนเธ”เธขเธญเธฑเธ•เนเธเธกเธฑเธ•เธด",
+      "เนเธเนเธเธฒเธเนเธ”เนเธเธฃเธต เนเธกเนเธ•เนเธญเธเธเธนเธเธเธฑเธ•เธฃเน€เธเธฃเธ”เธดเธ•",
     ],
     stack: [
       { group: "Frontend", items: ["React", "Vite"] },
@@ -38,24 +38,24 @@ const projects = [
     title: "Sweet QR",
     tags: ["React", "Tailwind CSS", "QR Generator"],
     description:
-      "เว็บสร้าง QR Code ฟรี ปรับแต่งสีและใส่โลโก้ได้ พร้อมดาวน์โหลดไฟล์ความละเอียดสูงสำหรับใช้งานจริง ออกแบบให้ใช้ง่ายทั้งบนมือถือและเดสก์ท็อป",
+      "เน€เธงเนเธเธชเธฃเนเธฒเธ QR Code เธเธฃเธต เธเธฃเธฑเธเนเธ•เนเธเธชเธตเนเธฅเธฐเนเธชเนเนเธฅเนเธเนเนเธ”เน เธเธฃเนเธญเธกเธ”เธฒเธงเธเนเนเธซเธฅเธ”เนเธเธฅเนเธเธงเธฒเธกเธฅเธฐเน€เธญเธตเธขเธ”เธชเธนเธเธชเธณเธซเธฃเธฑเธเนเธเนเธเธฒเธเธเธฃเธดเธ เธญเธญเธเนเธเธเนเธซเนเนเธเนเธเนเธฒเธขเธ—เธฑเนเธเธเธเธกเธทเธญเธ–เธทเธญเนเธฅเธฐเน€เธ”เธชเธเนเธ—เนเธญเธ",
     demo: "https://sweet-qr.site/",
     accent: "#E0567A",
-    role: "Solo Developer — ออกแบบ UI/UX และพัฒนาทั้งระบบ",
-    status: "เปิดใช้งานแล้ว",
+    role: "Solo Developer โ€” เธญเธญเธเนเธเธ UI/UX เนเธฅเธฐเธเธฑเธ’เธเธฒเธ—เธฑเนเธเธฃเธฐเธเธ",
+    status: "เน€เธเธดเธ”เนเธเนเธเธฒเธเนเธฅเนเธง",
     overview:
-      "เครื่องมือสร้าง QR Code ส่วนใหญ่มักติดลายน้ำ จำกัดจำนวนครั้ง หรือให้ไฟล์ความละเอียดต่ำจนนำไปพิมพ์จริงไม่ได้ Sweet QR จึงทำให้ทุกอย่างฟรีตั้งแต่ต้น ปรับสี ใส่โลโก้ แล้วดาวน์โหลดไฟล์คุณภาพสูงไปใช้งานได้ทันที",
+      "เน€เธเธฃเธทเนเธญเธเธกเธทเธญเธชเธฃเนเธฒเธ QR Code เธชเนเธงเธเนเธซเธเนเธกเธฑเธเธ•เธดเธ”เธฅเธฒเธขเธเนเธณ เธเธณเธเธฑเธ”เธเธณเธเธงเธเธเธฃเธฑเนเธ เธซเธฃเธทเธญเนเธซเนเนเธเธฅเนเธเธงเธฒเธกเธฅเธฐเน€เธญเธตเธขเธ”เธ•เนเธณเธเธเธเธณเนเธเธเธดเธกเธเนเธเธฃเธดเธเนเธกเนเนเธ”เน Sweet QR เธเธถเธเธ—เธณเนเธซเนเธ—เธธเธเธญเธขเนเธฒเธเธเธฃเธตเธ•เธฑเนเธเนเธ•เนเธ•เนเธ เธเธฃเธฑเธเธชเธต เนเธชเนเนเธฅเนเธเน เนเธฅเนเธงเธ”เธฒเธงเธเนเนเธซเธฅเธ”เนเธเธฅเนเธเธธเธ“เธ เธฒเธเธชเธนเธเนเธเนเธเนเธเธฒเธเนเธ”เนเธ—เธฑเธเธ—เธต",
     highlights: [
-      "สร้าง QR Code ได้ฟรี ไม่มีลายน้ำ",
-      "ปรับสีและใส่โลโก้ตรงกลาง QR ได้",
-      "ดาวน์โหลดไฟล์ความละเอียดสูง พร้อมนำไปพิมพ์จริง",
-      "ใช้งานลื่นทั้งบนมือถือและเดสก์ท็อป",
+      "เธชเธฃเนเธฒเธ QR Code เนเธ”เนเธเธฃเธต เนเธกเนเธกเธตเธฅเธฒเธขเธเนเธณ",
+      "เธเธฃเธฑเธเธชเธตเนเธฅเธฐเนเธชเนเนเธฅเนเธเนเธ•เธฃเธเธเธฅเธฒเธ QR เนเธ”เน",
+      "เธ”เธฒเธงเธเนเนเธซเธฅเธ”เนเธเธฅเนเธเธงเธฒเธกเธฅเธฐเน€เธญเธตเธขเธ”เธชเธนเธ เธเธฃเนเธญเธกเธเธณเนเธเธเธดเธกเธเนเธเธฃเธดเธ",
+      "เนเธเนเธเธฒเธเธฅเธทเนเธเธ—เธฑเนเธเธเธเธกเธทเธญเธ–เธทเธญเนเธฅเธฐเน€เธ”เธชเธเนเธ—เนเธญเธ",
     ],
     stack: [
       { group: "Frontend", items: ["React", "Tailwind CSS"] },
       { group: "Feature", items: ["QR Generation", "Logo Embedding"] },
     ],
-    note: "โค้ดเก็บเป็น private repository เนื่องจากมีข้อมูลการตั้งค่าที่ไม่เปิดเผย",
+    note: "เนเธเนเธ”เน€เธเนเธเน€เธเนเธ private repository เน€เธเธทเนเธญเธเธเธฒเธเธกเธตเธเนเธญเธกเธนเธฅเธเธฒเธฃเธ•เธฑเนเธเธเนเธฒเธ—เธตเนเนเธกเนเน€เธเธดเธ”เน€เธเธข",
   },
   {
     id: 3,
@@ -64,19 +64,19 @@ const projects = [
     title: "FreenzyShoot",
     tags: ["Unity", "C#", "2D Physics"],
     description:
-      "เกม 2D Action Platformer / Shooter ผู้เล่นวิ่ง กระโดด ปีนบันได เก็บอาวุธ ยิงศัตรู หลบกับดัก เพื่อไปให้ถึงประตูทางออกของแต่ละด่าน",
+      "เน€เธเธก 2D Action Platformer / Shooter เธเธนเนเน€เธฅเนเธเธงเธดเนเธ เธเธฃเธฐเนเธ”เธ” เธเธตเธเธเธฑเธเนเธ” เน€เธเนเธเธญเธฒเธงเธธเธ เธขเธดเธเธจเธฑเธ•เธฃเธน เธซเธฅเธเธเธฑเธเธ”เธฑเธ เน€เธเธทเนเธญเนเธเนเธซเนเธ–เธถเธเธเธฃเธฐเธ•เธนเธ—เธฒเธเธญเธญเธเธเธญเธเนเธ•เนเธฅเธฐเธ”เนเธฒเธ",
     demo: "https://github.com/wiraphat-kany/FreenzyShoot",
     github: "https://github.com/wiraphat-kany/FreenzyShoot",
     accent: "#4FC97E",
-    role: "Game Developer — ออกแบบด่าน ระบบการเล่น และเขียนสคริปต์ทั้งหมด",
-    status: "เสร็จสมบูรณ์",
+    role: "Game Developer โ€” เธญเธญเธเนเธเธเธ”เนเธฒเธ เธฃเธฐเธเธเธเธฒเธฃเน€เธฅเนเธ เนเธฅเธฐเน€เธเธตเธขเธเธชเธเธฃเธดเธเธ•เนเธ—เธฑเนเธเธซเธกเธ”",
+    status: "เน€เธชเธฃเนเธเธชเธกเธเธนเธฃเธ“เน",
     overview:
-      "เกมแอ็กชันแพลตฟอร์มเมอร์ 2 มิติที่โฟกัสไปที่จังหวะการเคลื่อนที่และการยิง ผู้เล่นต้องอ่านการวางตำแหน่งของศัตรูและกับดัก เลือกใช้อาวุธให้เหมาะกับสถานการณ์ แล้วหาเส้นทางไปยังประตูทางออกของแต่ละด่าน",
+      "เน€เธเธกเนเธญเนเธเธเธฑเธเนเธเธฅเธ•เธเธญเธฃเนเธกเน€เธกเธญเธฃเน 2 เธกเธดเธ•เธดเธ—เธตเนเนเธเธเธฑเธชเนเธเธ—เธตเนเธเธฑเธเธซเธงเธฐเธเธฒเธฃเน€เธเธฅเธทเนเธญเธเธ—เธตเนเนเธฅเธฐเธเธฒเธฃเธขเธดเธ เธเธนเนเน€เธฅเนเธเธ•เนเธญเธเธญเนเธฒเธเธเธฒเธฃเธงเธฒเธเธ•เธณเนเธซเธเนเธเธเธญเธเธจเธฑเธ•เธฃเธนเนเธฅเธฐเธเธฑเธเธ”เธฑเธ เน€เธฅเธทเธญเธเนเธเนเธญเธฒเธงเธธเธเนเธซเนเน€เธซเธกเธฒเธฐเธเธฑเธเธชเธ–เธฒเธเธเธฒเธฃเธ“เน เนเธฅเนเธงเธซเธฒเน€เธชเนเธเธ—เธฒเธเนเธเธขเธฑเธเธเธฃเธฐเธ•เธนเธ—เธฒเธเธญเธญเธเธเธญเธเนเธ•เนเธฅเธฐเธ”เนเธฒเธ",
     highlights: [
-      "ระบบเคลื่อนที่ครบ — วิ่ง กระโดด ปีนบันได",
-      "อาวุธหลายชนิดที่เก็บได้ระหว่างเล่น",
-      "ศัตรูหลายรูปแบบพร้อมพฤติกรรมต่างกัน",
-      "กับดักและการออกแบบด่านที่ต้องวางแผนเส้นทาง",
+      "เธฃเธฐเธเธเน€เธเธฅเธทเนเธญเธเธ—เธตเนเธเธฃเธ โ€” เธงเธดเนเธ เธเธฃเธฐเนเธ”เธ” เธเธตเธเธเธฑเธเนเธ”",
+      "เธญเธฒเธงเธธเธเธซเธฅเธฒเธขเธเธเธดเธ”เธ—เธตเนเน€เธเนเธเนเธ”เนเธฃเธฐเธซเธงเนเธฒเธเน€เธฅเนเธ",
+      "เธจเธฑเธ•เธฃเธนเธซเธฅเธฒเธขเธฃเธนเธเนเธเธเธเธฃเนเธญเธกเธเธคเธ•เธดเธเธฃเธฃเธกเธ•เนเธฒเธเธเธฑเธ",
+      "เธเธฑเธเธ”เธฑเธเนเธฅเธฐเธเธฒเธฃเธญเธญเธเนเธเธเธ”เนเธฒเธเธ—เธตเนเธ•เนเธญเธเธงเธฒเธเนเธเธเน€เธชเนเธเธ—เธฒเธ",
     ],
     stack: [
       { group: "Engine", items: ["Unity"] },
@@ -107,7 +107,7 @@ function ProjectCard({ project, delay, onOpen }) {
       <article
         role="button"
         tabIndex={0}
-        aria-label={`ดูรายละเอียดโปรเจค ${project.title}`}
+        aria-label={`เธ”เธนเธฃเธฒเธขเธฅเธฐเน€เธญเธตเธขเธ”เนเธเธฃเน€เธเธ ${project.title}`}
         onClick={() => onOpen(project)}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") {
@@ -125,7 +125,7 @@ function ProjectCard({ project, delay, onOpen }) {
         <div className="aspect-[16/10] overflow-hidden relative">
           <img src={project.image} alt={project.title} loading="lazy" className="w-full h-full object-cover" />
           <span className="project-card-hint">
-            คลิกเพื่อดูรายละเอียด
+            เธเธฅเธดเธเน€เธเธทเนเธญเธ”เธนเธฃเธฒเธขเธฅเธฐเน€เธญเธตเธขเธ”
           </span>
         </div>
 
@@ -150,7 +150,7 @@ function ProjectCard({ project, delay, onOpen }) {
 
           <div className="mt-6 flex justify-between items-center">
             <span className="text-sm font-semibold" style={{ color: project.accent }}>
-              ดูรายละเอียด
+              เธ”เธนเธฃเธฒเธขเธฅเธฐเน€เธญเธตเธขเธ”
             </span>
             {project.github ? <GitHubIcon className="w-6 h-6" /> : <Chip accent={project.accent}>Private repo</Chip>}
           </div>
@@ -168,13 +168,9 @@ function ProjectModal({ project, onClose }) {
       if (e.key === "Escape") onClose();
     };
     document.addEventListener("keydown", onKey);
-
-    // ชดเชยความกว้าง scrollbar ไม่งั้นหน้าจะกระตุกกว้างขึ้นตอนล็อกสกอลล์
     const gap = window.innerWidth - document.documentElement.clientWidth;
     const prevPad = document.body.style.paddingRight;
     if (gap > 0) document.body.style.paddingRight = `${gap}px`;
-
-    // ใช้ class แทนการเซ็ต style.overflow ตรง ๆ เพื่อไม่ให้ทับ overflow-x: clip ที่ navbar sticky ต้องใช้
     document.body.classList.add("modal-open");
     panelRef.current?.focus();
 
@@ -187,8 +183,8 @@ function ProjectModal({ project, onClose }) {
 
   if (!project) return null;
   const a = project.accent;
+  const technologies = project.stack?.flatMap((group) => group.items) ?? project.tags;
 
-  // render ที่ body โดยตรง — กันไม่ให้ ancestor ที่มี transform/overflow ไปตัดหรือดัด position: fixed
   return createPortal(
     <div className="project-modal-backdrop" onClick={onClose}>
       <div
@@ -201,124 +197,86 @@ function ProjectModal({ project, onClose }) {
         style={{ borderColor: `${a}55` }}
         onClick={(e) => e.stopPropagation()}
       >
-        <button type="button" className="btn-icon project-modal-close" onClick={onClose} aria-label="ปิด">
-          <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M6 6l12 12M18 6L6 18" />
-          </svg>
-        </button>
-
-        <div className="project-modal-hero">
-          <img src={project.image} alt={project.title} />
-          <div className="project-modal-hero-scrim" />
-          <div className="project-modal-hero-text">
-            <p className="text-xs sm:text-sm font-semibold mb-1" style={{ color: a }}>
-              {project.category}
-            </p>
-            <h3 id="project-modal-title" className="text-2xl sm:text-3xl font-bold text-white">
-              {project.title}
-            </h3>
-          </div>
-        </div>
-
-        <div className="project-modal-body">
-          <div className="flex flex-wrap gap-2">
-            {project.status && <Chip accent={a}>{project.status}</Chip>}
-            {project.tags.map((tag) => (
-              <Chip key={tag} accent={a}>
-                {tag}
-              </Chip>
-            ))}
-          </div>
-
-          {project.role && (
-            <div className="project-modal-meta">
-              <span className="project-modal-label">บทบาท</span>
-              <p>{project.role}</p>
-            </div>
-          )}
-
+        <header className="project-modal-header">
           <div>
-            <h4 className="project-modal-heading" style={{ color: a }}>
-              เกี่ยวกับโปรเจค
-            </h4>
-            <p className="project-modal-text">{project.overview || project.description}</p>
+            <p className="project-modal-category" style={{ color: a }}>{project.category}</p>
+            <h3 id="project-modal-title">{project.title}</h3>
           </div>
+          <button type="button" className="btn-icon project-modal-close" onClick={onClose} aria-label="ปิด">
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 6l12 12M18 6L6 18" />
+            </svg>
+          </button>
+        </header>
 
-          {project.highlights?.length > 0 && (
-            <div>
-              <h4 className="project-modal-heading" style={{ color: a }}>
-                สิ่งที่ทำได้
-              </h4>
-              <ul className="project-modal-list">
-                {project.highlights.map((h) => (
-                  <li key={h}>
-                    <span className="bullet" style={{ backgroundColor: a }} />
-                    <span>{h}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+        <div className="project-modal-layout">
+          <section className="project-modal-media" aria-label="Project media">
+            <span className="project-modal-label">Project Media</span>
+            <img src={project.image} alt={project.title} />
+          </section>
 
-          {project.stack?.length > 0 && (
-            <div>
-              <h4 className="project-modal-heading" style={{ color: a }}>
-                เทคโนโลยีที่ใช้
-              </h4>
-              <div className="project-modal-stack">
-                {project.stack.map((g) => (
-                  <div key={g.group}>
-                    <span className="project-modal-label">{g.group}</span>
-                    <div className="flex flex-wrap gap-2 mt-2">
-                      {g.items.map((it) => (
-                        <Chip key={it} accent={a}>
-                          {it}
-                        </Chip>
-                      ))}
-                    </div>
-                  </div>
-                ))}
+          <div className="project-modal-content">
+            <section>
+              <span className="project-modal-label">Project Overview</span>
+              <p className="project-modal-text">{project.overview || project.description}</p>
+            </section>
+
+            {project.role && (
+              <section>
+                <span className="project-modal-label">My Contribution</span>
+                <p className="project-modal-text">{project.role}</p>
+              </section>
+            )}
+
+            {project.highlights?.length > 0 && (
+              <section>
+                <span className="project-modal-label">Key Highlights</span>
+                <ul className="project-modal-list">
+                  {project.highlights.map((highlight) => (
+                    <li key={highlight}>
+                      <span className="bullet" style={{ backgroundColor: a }} />
+                      <span>{highlight}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
+            <section>
+              <span className="project-modal-label">Technologies Used</span>
+              <div className="project-modal-tech">
+                {project.status && <Chip accent={a}>{project.status}</Chip>}
+                {technologies.map((technology) => <Chip key={technology} accent={a}>{technology}</Chip>)}
               </div>
-            </div>
-          )}
+            </section>
 
-          {project.note && <p className="project-modal-note">{project.note}</p>}
-
-          <div className="project-modal-actions">
-            {project.demo && (
-              <a href={project.demo} target="_blank" rel="noreferrer" className="btn btn-primary" style={{ backgroundColor: a }}>
-                เปิดดูโปรเจค
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M14 5h5v5M19 5l-8 8M18 14v4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h4" />
-                </svg>
-              </a>
-            )}
-
-            {project.github ? (
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noreferrer"
-                className="btn btn-ghost"
-                style={{ borderColor: `${a}66`, color: a }}
-              >
-                <GitHubIcon />
-                Source Code
-              </a>
-            ) : (
-              <span className="btn is-disabled">
-                <GitHubIcon />
-                Private repo
-              </span>
-            )}
+            {project.note && <p className="project-modal-note">{project.note}</p>}
           </div>
         </div>
+
+        <footer className="project-modal-footer">
+          {project.github ? (
+            <a href={project.github} target="_blank" rel="noreferrer" className="btn btn-ghost" style={{ borderColor: `${a}66`, color: a }}>
+              <GitHubIcon />
+              Repository
+            </a>
+          ) : (
+            <span className="btn is-disabled"><GitHubIcon /> Private repo</span>
+          )}
+          {project.demo && (
+            <a href={project.demo} target="_blank" rel="noreferrer" className="btn btn-primary" style={{ backgroundColor: a }}>
+              Demo
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M14 5h5v5M19 5l-8 8M18 14v4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h4" />
+              </svg>
+            </a>
+          )}
+        </footer>
       </div>
     </div>,
     document.body
   );
 }
-
 function Landingpage() {
   const [active, setActive] = useState(null);
   const close = useCallback(() => setActive(null), []);

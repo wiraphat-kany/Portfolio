@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import Reveal from './Reveal'
 
-// matchMedia แทน resize listener — ยิงเฉพาะตอนข้ามเบรกพอยต์ ไม่ใช่ทุกพิกเซลที่ลากจอ
+// matchMedia เนเธ—เธ resize listener โ€” เธขเธดเธเน€เธเธเธฒเธฐเธ•เธญเธเธเนเธฒเธกเน€เธเธฃเธเธเธญเธขเธ•เน เนเธกเนเนเธเนเธ—เธธเธเธเธดเธเน€เธเธฅเธ—เธตเนเธฅเธฒเธเธเธญ
 const MOBILE_QUERY = '(max-width: 767px)'
 
 function useIsMobile() {
@@ -19,23 +19,24 @@ function useIsMobile() {
   return isMobile
 }
 
-// ── ข้อมูลทั้งหมดเรียงตามลำดับการเรียน ─────────────────────
-// รูปภาพ (ct/*.pdf แปลงเป็น .jpg) แมพตรงกับหัวข้อใบประกาศนียบัตรจริง
+// โ”€โ”€ เธเนเธญเธกเธนเธฅเธ—เธฑเนเธเธซเธกเธ”เน€เธฃเธตเธขเธเธ•เธฒเธกเธฅเธณเธ”เธฑเธเธเธฒเธฃเน€เธฃเธตเธขเธ โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€
+// เธฃเธนเธเธ เธฒเธ (ct/*.pdf เนเธเธฅเธเน€เธเนเธ .jpg) เนเธกเธเธ•เธฃเธเธเธฑเธเธซเธฑเธงเธเนเธญเนเธเธเธฃเธฐเธเธฒเธจเธเธตเธขเธเธฑเธ•เธฃเธเธฃเธดเธ
 const allCerts = [
-  { title: 'HTML Fundamentals',        desc: 'เริ่มต้นสร้างและแสดงเนื้อหาของเว็บไซต์ด้วย HTML',            skill: 'HTML',      color: '#7C6FF7', img: '/images/certificates/html.webp',            pdf: '/ct/Wiraphat-Html.pdf' },
-  { title: 'CSS Styling',              desc: 'ปรับแต่งและจัดวางสไตล์ของเว็บไซต์ด้วย CSS',                 skill: 'CSS',       color: '#7C6FF7', img: '/images/certificates/css.webp',             pdf: '/ct/Wiraphat-Css.pdf' },
-  { title: 'JavaScript Basics',        desc: 'เพิ่มลูกเล่นให้กับเว็บไซต์ด้วย JavaScript',                skill: 'JS',        color: '#7C6FF7', img: '/images/certificates/js-basics.webp',       pdf: '/ct/Wiraphat-JS.pdf' },
+  { title: 'Udemy Course Certificate', desc: 'Certificate of completion from Udemy.', skill: 'Udemy', color: '#A435F0', img: '/images/certificates/udemy-course-certificate.jpg', pdf: '/ct/udemy-course-certificate.pdf' },
+  { title: 'HTML Fundamentals',        desc: 'เน€เธฃเธดเนเธกเธ•เนเธเธชเธฃเนเธฒเธเนเธฅเธฐเนเธชเธ”เธเน€เธเธทเนเธญเธซเธฒเธเธญเธเน€เธงเนเธเนเธเธ•เนเธ”เนเธงเธข HTML',            skill: 'HTML',      color: '#7C6FF7', img: '/images/certificates/html.webp',            pdf: '/ct/Wiraphat-Html.pdf' },
+  { title: 'CSS Styling',              desc: 'เธเธฃเธฑเธเนเธ•เนเธเนเธฅเธฐเธเธฑเธ”เธงเธฒเธเธชเนเธ•เธฅเนเธเธญเธเน€เธงเนเธเนเธเธ•เนเธ”เนเธงเธข CSS',                 skill: 'CSS',       color: '#7C6FF7', img: '/images/certificates/css.webp',             pdf: '/ct/Wiraphat-Css.pdf' },
+  { title: 'JavaScript Basics',        desc: 'เน€เธเธดเนเธกเธฅเธนเธเน€เธฅเนเธเนเธซเนเธเธฑเธเน€เธงเนเธเนเธเธ•เนเธ”เนเธงเธข JavaScript',                skill: 'JS',        color: '#7C6FF7', img: '/images/certificates/js-basics.webp',       pdf: '/ct/Wiraphat-JS.pdf' },
   { title: 'JS for Frontend Dev',      desc: 'Basic Javascript for Frontend Developer',                    skill: 'JS',        color: '#7C6FF7', img: '/images/certificates/js-frontend.webp',     pdf: '/ct/Wiraphat-Jsfordev.pdf' },
-  { title: 'UI Design with Figma',     desc: 'หลักการออกแบบ UI Design ด้วยโปรแกรม Figma',                skill: 'Figma',     color: '#7C6FF7', img: '/images/certificates/ux-ui.webp',           pdf: '/ct/wiraphat-ux-ui.pdf' },
-  { title: 'React 1 — Components',     desc: 'ความรู้พื้นฐานสำหรับ Components และ JSX',                   skill: 'React',     color: '#38BDF8', img: '/images/certificates/react-1.webp',         pdf: '/ct/Wiraphat-react-1.pdf' },
-  { title: 'React 2 — State & Events', desc: 'การจัดการ State และ Events ใน React',                       skill: 'React',     color: '#38BDF8', img: '/images/certificates/react-2.webp',         pdf: '/ct/Wiraphat-react-2.pdf' },
-  { title: 'React 3 — Dynamic Render', desc: 'การแสดงผลตามข้อมูลที่เปลี่ยนแปลง',                        skill: 'React',     color: '#38BDF8', img: '/images/certificates/react-3.webp',         pdf: '/ct/Wiraphat-react-3.pdf' },
-  { title: 'React 4 — Hooks',          desc: 'ฟังก์ชัน Hook พื้นฐาน (useState, useEffect)',               skill: 'React',     color: '#38BDF8', img: '/images/certificates/react-4.webp',         pdf: '/ct/Wiraphat-react-4.pdf' },
-  { title: 'Node.js Backend',          desc: 'ก้าวสู่เส้นทาง Back-end Developer ด้วย Node.js',           skill: 'Node.js',   color: '#4FC97E', img: '/images/certificates/nodejs-backend.webp',  pdf: '/ct/Wiraphat-start-nodejs-backend.pdf' },
-  { title: 'Express Framework',        desc: 'เริ่มต้นใช้ Web Framework ด้วย Express และ REST API',      skill: 'Express',   color: '#4FC97E', img: '/images/certificates/express-restapi.webp', pdf: '/ct/Wiraphat-framework-restapi.pdf' },
-  { title: 'API Integration',          desc: 'เชื่อมต่อเว็บไซต์กับข้อมูลจากแหล่งอื่นๆ โดยใช้ API',     skill: 'REST API',  color: '#4FC97E', img: '/images/certificates/api-web.webp',         pdf: '/ct/wiraphat-api-web.pdf' },
-  { title: 'SQL Database',             desc: 'จัดการฐานข้อมูลอย่างมีประสิทธิภาพพร้อมวิเคราะห์ด้วย SQL', skill: 'SQL',       color: '#F7A24F', img: '/images/certificates/sql.webp',             pdf: '/ct/wiraphat-sql-command.pdf' },
-  { title: 'MongoDB & NoSQL',          desc: 'จัดการกับฐานข้อมูลด้วย NoSQL และ MongoDB',                  skill: 'MongoDB',   color: '#F7A24F', img: '/images/certificates/mongodb.webp',         pdf: '/ct/wiraphat-nosql-mongodb.pdf' },
+  { title: 'UI Design with Figma',     desc: 'เธซเธฅเธฑเธเธเธฒเธฃเธญเธญเธเนเธเธ UI Design เธ”เนเธงเธขเนเธเธฃเนเธเธฃเธก Figma',                skill: 'Figma',     color: '#7C6FF7', img: '/images/certificates/ux-ui.webp',           pdf: '/ct/wiraphat-ux-ui.pdf' },
+  { title: 'React 1 โ€” Components',     desc: 'เธเธงเธฒเธกเธฃเธนเนเธเธทเนเธเธเธฒเธเธชเธณเธซเธฃเธฑเธ Components เนเธฅเธฐ JSX',                   skill: 'React',     color: '#38BDF8', img: '/images/certificates/react-1.webp',         pdf: '/ct/Wiraphat-react-1.pdf' },
+  { title: 'React 2 โ€” State & Events', desc: 'เธเธฒเธฃเธเธฑเธ”เธเธฒเธฃ State เนเธฅเธฐ Events เนเธ React',                       skill: 'React',     color: '#38BDF8', img: '/images/certificates/react-2.webp',         pdf: '/ct/Wiraphat-react-2.pdf' },
+  { title: 'React 3 โ€” Dynamic Render', desc: 'เธเธฒเธฃเนเธชเธ”เธเธเธฅเธ•เธฒเธกเธเนเธญเธกเธนเธฅเธ—เธตเนเน€เธเธฅเธตเนเธขเธเนเธเธฅเธ',                        skill: 'React',     color: '#38BDF8', img: '/images/certificates/react-3.webp',         pdf: '/ct/Wiraphat-react-3.pdf' },
+  { title: 'React 4 โ€” Hooks',          desc: 'เธเธฑเธเธเนเธเธฑเธ Hook เธเธทเนเธเธเธฒเธ (useState, useEffect)',               skill: 'React',     color: '#38BDF8', img: '/images/certificates/react-4.webp',         pdf: '/ct/Wiraphat-react-4.pdf' },
+  { title: 'Node.js Backend',          desc: 'เธเนเธฒเธงเธชเธนเนเน€เธชเนเธเธ—เธฒเธ Back-end Developer เธ”เนเธงเธข Node.js',           skill: 'Node.js',   color: '#4FC97E', img: '/images/certificates/nodejs-backend.webp',  pdf: '/ct/Wiraphat-start-nodejs-backend.pdf' },
+  { title: 'Express Framework',        desc: 'เน€เธฃเธดเนเธกเธ•เนเธเนเธเน Web Framework เธ”เนเธงเธข Express เนเธฅเธฐ REST API',      skill: 'Express',   color: '#4FC97E', img: '/images/certificates/express-restapi.webp', pdf: '/ct/Wiraphat-framework-restapi.pdf' },
+  { title: 'API Integration',          desc: 'เน€เธเธทเนเธญเธกเธ•เนเธญเน€เธงเนเธเนเธเธ•เนเธเธฑเธเธเนเธญเธกเธนเธฅเธเธฒเธเนเธซเธฅเนเธเธญเธทเนเธเน เนเธ”เธขเนเธเน API',     skill: 'REST API',  color: '#4FC97E', img: '/images/certificates/api-web.webp',         pdf: '/ct/wiraphat-api-web.pdf' },
+  { title: 'SQL Database',             desc: 'เธเธฑเธ”เธเธฒเธฃเธเธฒเธเธเนเธญเธกเธนเธฅเธญเธขเนเธฒเธเธกเธตเธเธฃเธฐเธชเธดเธ—เธเธดเธ เธฒเธเธเธฃเนเธญเธกเธงเธดเน€เธเธฃเธฒเธฐเธซเนเธ”เนเธงเธข SQL', skill: 'SQL',       color: '#F7A24F', img: '/images/certificates/sql.webp',             pdf: '/ct/wiraphat-sql-command.pdf' },
+  { title: 'MongoDB & NoSQL',          desc: 'เธเธฑเธ”เธเธฒเธฃเธเธฑเธเธเธฒเธเธเนเธญเธกเธนเธฅเธ”เนเธงเธข NoSQL เนเธฅเธฐ MongoDB',                  skill: 'MongoDB',   color: '#F7A24F', img: '/images/certificates/mongodb.webp',         pdf: '/ct/wiraphat-nosql-mongodb.pdf' },
   { title: 'Workshop : Todo List',     desc: 'Workshop Todo List With MongoDB And Mongoose',               skill: 'Mongoose',  color: '#F7A24F', img: '/images/certificates/todolist-mongo.webp',  pdf: '/ct/Wiraphat-todolistmongofb.pdf' },
 ]
 
@@ -62,7 +63,7 @@ function CertCard({ cert, onOpen }) {
       </div>
       <div style={s.cardBody}>
         <p style={s.cardTitle}>{cert.title}</p>
-        <span style={s.hint}>ดูรายละเอียด →</span>
+        <span style={s.hint}>เธ”เธนเธฃเธฒเธขเธฅเธฐเน€เธญเธตเธขเธ” โ’</span>
       </div>
     </button>
   )
@@ -70,17 +71,17 @@ function CertCard({ cert, onOpen }) {
 
 function CertModal({ cert, onClose }) {
   useEffect(() => {
-    // เมื่อยังไม่มีใบเซอร์ที่เปิดอยู่ (cert เป็น null) ต้องไม่แตะ scroll ของ body เลย —
-    // ก่อนหน้านี้ effect ทำงานทันทีตอน mount ทำให้ล็อกสกอลทั้งหน้าตั้งแต่โหลดเสร็จ
+    // เน€เธกเธทเนเธญเธขเธฑเธเนเธกเนเธกเธตเนเธเน€เธเธญเธฃเนเธ—เธตเนเน€เธเธดเธ”เธญเธขเธนเน (cert เน€เธเนเธ null) เธ•เนเธญเธเนเธกเนเนเธ•เธฐ scroll เธเธญเธ body เน€เธฅเธข โ€”
+    // เธเนเธญเธเธซเธเนเธฒเธเธตเน effect เธ—เธณเธเธฒเธเธ—เธฑเธเธ—เธตเธ•เธญเธ mount เธ—เธณเนเธซเนเธฅเนเธญเธเธชเธเธญเธฅเธ—เธฑเนเธเธซเธเนเธฒเธ•เธฑเนเธเนเธ•เนเนเธซเธฅเธ”เน€เธชเธฃเนเธ
     if (!cert) return undefined
 
     const onKey = (e) => { if (e.key === 'Escape') onClose() }
     document.addEventListener('keydown', onKey)
 
-    // ต้องใช้ class .modal-open เท่านั้น ห้ามเซ็ต body.style.overflow ตรง ๆ เพราะ
-    // 1) มันทับ overflow-x: clip ที่ navbar sticky ต้องใช้
-    // 2) พอสกอลล์ถูกล็อก animation-timeline: view() จะไม่มีระยะให้คำนวณ
-    //    ทุก .reveal เลยรีเซ็ตเป็น opacity: 0 = เนื้อหาหายทั้งหน้า
+    // เธ•เนเธญเธเนเธเน class .modal-open เน€เธ—เนเธฒเธเธฑเนเธ เธซเนเธฒเธกเน€เธเนเธ• body.style.overflow เธ•เธฃเธ เน เน€เธเธฃเธฒเธฐ
+    // 1) เธกเธฑเธเธ—เธฑเธ overflow-x: clip เธ—เธตเน navbar sticky เธ•เนเธญเธเนเธเน
+    // 2) เธเธญเธชเธเธญเธฅเธฅเนเธ–เธนเธเธฅเนเธญเธ animation-timeline: view() เธเธฐเนเธกเนเธกเธตเธฃเธฐเธขเธฐเนเธซเนเธเธณเธเธงเธ“
+    //    เธ—เธธเธ .reveal เน€เธฅเธขเธฃเธตเน€เธเนเธ•เน€เธเนเธ opacity: 0 = เน€เธเธทเนเธญเธซเธฒเธซเธฒเธขเธ—เธฑเนเธเธซเธเนเธฒ
     const gap = window.innerWidth - document.documentElement.clientWidth
     const prevPad = document.body.style.paddingRight
     if (gap > 0) document.body.style.paddingRight = `${gap}px`
@@ -95,10 +96,10 @@ function CertModal({ cert, onClose }) {
 
   if (!cert) return null
 
-  // ใช้ Portal render ตรงไปที่ document.body — เพราะ App.js มี wrapper div ที่ใส่
-  // transition-transform (translate-x-0) ซึ่งทำให้ ancestor กลายเป็น containing block
-  // ใหม่ของ position:fixed ทำให้ modal เดิมไม่ยึดกับ viewport แต่ยึดกับความสูงทั้งหมด
-  // ของหน้า ผลคือถ้าเลื่อนสกอลลงมา modal จะไปโผล่นอกจอ (เห็นเป็นหน้าเปล่า)
+  // เนเธเน Portal render เธ•เธฃเธเนเธเธ—เธตเน document.body โ€” เน€เธเธฃเธฒเธฐ App.js เธกเธต wrapper div เธ—เธตเนเนเธชเน
+  // transition-transform (translate-x-0) เธเธถเนเธเธ—เธณเนเธซเน ancestor เธเธฅเธฒเธขเน€เธเนเธ containing block
+  // เนเธซเธกเนเธเธญเธ position:fixed เธ—เธณเนเธซเน modal เน€เธ”เธดเธกเนเธกเนเธขเธถเธ”เธเธฑเธ viewport เนเธ•เนเธขเธถเธ”เธเธฑเธเธเธงเธฒเธกเธชเธนเธเธ—เธฑเนเธเธซเธกเธ”
+  // เธเธญเธเธซเธเนเธฒ เธเธฅเธเธทเธญเธ–เนเธฒเน€เธฅเธทเนเธญเธเธชเธเธญเธฅเธฅเธเธกเธฒ modal เธเธฐเนเธเนเธเธฅเนเธเธญเธเธเธญ (เน€เธซเนเธเน€เธเนเธเธซเธเนเธฒเน€เธเธฅเนเธฒ)
   return createPortal(
     <div
       style={s.overlay}
@@ -108,7 +109,7 @@ function CertModal({ cert, onClose }) {
       onClick={onClose}
     >
       <div style={s.modal} onClick={(e) => e.stopPropagation()}>
-        <button type="button" onClick={onClose} className="btn-icon" style={s.closeBtn} aria-label="ปิด">✕</button>
+        <button type="button" onClick={onClose} className="btn-icon" style={s.closeBtn} aria-label="เธเธดเธ”">โ•</button>
 
         <div style={s.modalImgWrap}>
           <img src={cert.img} alt={cert.title} style={s.modalImg} />
@@ -128,9 +129,9 @@ function CertModal({ cert, onClose }) {
               className="btn btn-ghost btn-sm"
               style={{ color: cert.color, borderColor: `${cert.color}55` }}
             >
-              ดูใบเซอร์ตัวเต็ม ↗
+              เธ”เธนเนเธเน€เธเธญเธฃเนเธ•เธฑเธงเน€เธ•เนเธก โ—
             </a>
-            <span style={{ ...s.backVerified, color: cert.color }}>✓ Verified · FutureSkill 2026</span>
+            <span style={{ ...s.backVerified, color: cert.color }}>โ“ Verified ยท FutureSkill 2026</span>
           </div>
         </div>
       </div>
@@ -141,13 +142,13 @@ function CertModal({ cert, onClose }) {
 
 function Certificate() {
   const isMobile = useIsMobile()
-  // มือถือโชว์แค่ 3 ใบก่อน เดสก์ท็อป 4 ใบ
+  // เธกเธทเธญเธ–เธทเธญเนเธเธงเนเนเธเน 3 เนเธเธเนเธญเธ เน€เธ”เธชเธเนเธ—เนเธญเธ 4 เนเธ
   const initialShow = isMobile ? MOBILE_INITIAL_SHOW : DESKTOP_INITIAL_SHOW
   const step = isMobile ? MOBILE_INITIAL_SHOW : STEP
   const [shown, setShown] = useState(initialShow)
   const [activeCert, setActiveCert] = useState(null)
 
-  // useState จำค่าแค่ตอน mount — ถ้าไม่ sync ตรงนี้ ย่อจอจากเดสก์ท็อปมามือถือจะยังค้างที่ 4 ใบ
+  // useState เธเธณเธเนเธฒเนเธเนเธ•เธญเธ mount โ€” เธ–เนเธฒเนเธกเน sync เธ•เธฃเธเธเธตเน เธขเนเธญเธเธญเธเธฒเธเน€เธ”เธชเธเนเธ—เนเธญเธเธกเธฒเธกเธทเธญเธ–เธทเธญเธเธฐเธขเธฑเธเธเนเธฒเธเธ—เธตเน 4 เนเธ
   useEffect(() => {
     setShown(initialShow)
   }, [initialShow])
@@ -161,7 +162,7 @@ function Certificate() {
 
       <div style={s.inner}>
         <Reveal>
-          <p className="section-eyebrow">FutureSkill · Fullstack Developer Path</p>
+          <p className="section-eyebrow">FutureSkill ยท Fullstack Developer Path</p>
           <h2 className="section-heading">Certificates</h2>
         </Reveal>
 
@@ -174,7 +175,7 @@ function Certificate() {
           ))}
         </div>
 
-        {/* Show more / Show less — both available together so you're never "stuck" */}
+        {/* Show more / Show less โ€” both available together so you're never "stuck" */}
         <div style={s.btnWrap}>
           {canCollapse && (
             <button
@@ -182,7 +183,7 @@ function Certificate() {
               className="btn btn-subtle"
               onClick={() => setShown(sVal => Math.max(sVal - step, initialShow))}
             >
-              แสดงน้อยลง ↑
+              เนเธชเธ”เธเธเนเธญเธขเธฅเธ โ‘
             </button>
           )}
           {hasMore && (
@@ -191,7 +192,7 @@ function Certificate() {
               className="btn btn-subtle"
               onClick={() => setShown(sVal => Math.min(sVal + step, allCerts.length))}
             >
-              ดูเพิ่มอีก {Math.min(step, allCerts.length - shown)} ใบ
+              เธ”เธนเน€เธเธดเนเธกเธญเธตเธ {Math.min(step, allCerts.length - shown)} เนเธ
               <span style={s.counter}>{shown} / {allCerts.length}</span>
             </button>
           )}
@@ -222,7 +223,7 @@ const s = {
     gap: '16px',
   },
 
-  // Card (no 3D transforms — flip caused mirror render bugs in some browsers)
+  // Card (no 3D transforms โ€” flip caused mirror render bugs in some browsers)
   card: {
     width: '100%',
     textAlign: 'left',
@@ -290,7 +291,7 @@ const s = {
     fontFamily: 'monospace',
   },
 
-  // ── Modal ────────────────────────────────────────────────
+  // โ”€โ”€ Modal โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€
   overlay: {
     position: 'fixed', inset: 0, zIndex: 100,
     background: 'rgba(6,5,14,0.78)',
@@ -310,7 +311,7 @@ const s = {
     boxShadow: '0 30px 70px rgba(0,0,0,0.55)',
     animation: 'certPopIn 0.25s cubic-bezier(0.2,0.9,0.3,1) both',
   },
-  // หน้าตาปุ่มมาจาก .btn-icon ทั้งหมด ตรงนี้เหลือแค่การวางตำแหน่ง
+  // เธซเธเนเธฒเธ•เธฒเธเธธเนเธกเธกเธฒเธเธฒเธ .btn-icon เธ—เธฑเนเธเธซเธกเธ” เธ•เธฃเธเธเธตเนเน€เธซเธฅเธทเธญเนเธเนเธเธฒเธฃเธงเธฒเธเธ•เธณเนเธซเธเนเธ
   closeBtn: {
     position: 'absolute', top: '12px', right: '12px', zIndex: 3, fontSize: '14px',
   },

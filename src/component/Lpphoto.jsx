@@ -2,13 +2,13 @@ import React from 'react'
 import './Lpphoto.css'
 import Reveal from './Reveal'
 
-// ── ผลงานที่คัดมาว่าโดดเด่นที่สุดจาก public/images/lp-banner-photo/pc ──
-// ภาพต้นฉบับเป็นแบนเนอร์โฆษณาแนวนอน สัดส่วนจริงอยู่ราว 1.6-2.3:1 (เฉลี่ย ~1.9:1)
-// การ์ดในกริดจึงตั้งสัดส่วนใกล้เคียงค่าเฉลี่ยนี้ ให้ crop น้อยที่สุดและดูเนียนตา
-const hero = { src: '/images/lp-banner-photo/pc/22.webp', label: 'Festival Campaign' }
+// โ”€โ”€ เธเธฅเธเธฒเธเธ—เธตเนเธเธฑเธ”เธกเธฒเธงเนเธฒเนเธ”เธ”เน€เธ”เนเธเธ—เธตเนเธชเธธเธ”เธเธฒเธ public/images/lp-banner-photo/pc โ”€โ”€
+// เธ เธฒเธเธ•เนเธเธเธเธฑเธเน€เธเนเธเนเธเธเน€เธเธญเธฃเนเนเธเธฉเธ“เธฒเนเธเธงเธเธญเธ เธชเธฑเธ”เธชเนเธงเธเธเธฃเธดเธเธญเธขเธนเนเธฃเธฒเธง 1.6-2.3:1 (เน€เธเธฅเธตเนเธข ~1.9:1)
+// เธเธฒเธฃเนเธ”เนเธเธเธฃเธดเธ”เธเธถเธเธ•เธฑเนเธเธชเธฑเธ”เธชเนเธงเธเนเธเธฅเนเน€เธเธตเธขเธเธเนเธฒเน€เธเธฅเธตเนเธขเธเธตเน เนเธซเน crop เธเนเธญเธขเธ—เธตเนเธชเธธเธ”เนเธฅเธฐเธ”เธนเน€เธเธตเธขเธเธ•เธฒ
+const hero = { src: '/images/lp-banner-photo/pc/28.webp', label: 'Pageant Stage' }
 
 const gridItems = [
-  { src: '/images/lp-banner-photo/pc/28.webp', label: 'Pageant Stage' },
+  { src: '/images/lp-banner-photo/pc/24.webp', label: 'Campaign Banner' },
   { src: '/images/lp-banner-photo/pc/76.webp', label: 'Tarot Reading' },
   { src: '/images/lp-banner-photo/pc/84.webp', label: 'Luxury Masterclass' },
   { src: '/images/lp-banner-photo/pc/78.webp', label: 'Voice Coaching' },
@@ -34,8 +34,8 @@ const IconLayout = () => (
 
 
 const stats = [
-  { value: '106+', label: 'Designs Created', icon: <IconLayers /> },
-  { value: '2', label: 'Formats · PC & SP', icon: <IconLayout /> },
+  { value: '100+', label: 'Designs Created', icon: <IconLayers /> },
+  { value: '2', label: 'Formats ยท PC & SP', icon: <IconLayout /> },
 ]
 
 function BentoImg({ item }) {
@@ -53,10 +53,10 @@ function Lpphoto({ onNavigation }) {
       <div className="lp-texture-overlay" />
       <div className="lp-accent-line" />
 
-      {/* ── กรอบเนื้อหากลาง max-width เหมือน section อื่นๆ ในเว็บ
-          กันไม่ให้ข้อความ/ภาพชิดขอบจอเกินไปบนจอกว้าง ── */}
+      {/* โ”€โ”€ เธเธฃเธญเธเน€เธเธทเนเธญเธซเธฒเธเธฅเธฒเธ max-width เน€เธซเธกเธทเธญเธ section เธญเธทเนเธเน เนเธเน€เธงเนเธ
+          เธเธฑเธเนเธกเนเนเธซเนเธเนเธญเธเธงเธฒเธก/เธ เธฒเธเธเธดเธ”เธเธญเธเธเธญเน€เธเธดเธเนเธเธเธเธเธญเธเธงเนเธฒเธ โ”€โ”€ */}
       <div className="lp-inner">
-        {/* ── Left ── */}
+        {/* โ”€โ”€ Left โ”€โ”€ */}
         <div className="lp-left">
           <Reveal>
             <div className="lp-eyebrow">
@@ -64,12 +64,10 @@ function Lpphoto({ onNavigation }) {
               <span className="lp-eyebrow-text">Creative Works</span>
             </div>
             <div className="lp-title">
-              Commercial
-              <br />
               <span className="lp-title-accent">Graphic Design</span>
             </div>
             <p className="lp-desc">
-              A collection of visual works — branding, UI, posters, and marketing
+              A collection of visual works โ€” branding, UI, posters, and marketing
               banners crafted for clients worldwide.
             </p>
 
@@ -88,13 +86,13 @@ function Lpphoto({ onNavigation }) {
               className="btn btn-primary"
               onClick={() => onNavigation?.('photobanner')}
             >
-              View All 106+ Designs
+              View All 100+ Designs
               <span className="btn-arrow" />
             </button>
           </Reveal>
         </div>
 
-        {/* ── Right — hero + กริดสม่ำเสมอของผลงานที่โดดเด่นที่สุด ── */}
+        {/* โ”€โ”€ Right โ€” hero + เธเธฃเธดเธ”เธชเธกเนเธณเน€เธชเธกเธญเธเธญเธเธเธฅเธเธฒเธเธ—เธตเนเนเธ”เธ”เน€เธ”เนเธเธ—เธตเนเธชเธธเธ” โ”€โ”€ */}
         <div className="lp-right">
           <Reveal delay={80} className="lp-bento">
             <div className="lp-bento-card lp-bento-hero">

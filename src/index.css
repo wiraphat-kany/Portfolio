@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  /* ── Unified design tokens ─────────────────────────────── */
+  /* โ”€โ”€ Unified design tokens โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€ */
   --bg-primary: #0D0B1A;
   --bg-alt: #120F24;
   --accent: #7C6FF7;
@@ -23,7 +23,7 @@ html {
 
 body {
   background-color: var(--bg-primary);
-  /* clip ไม่ใช่ hidden — hidden จะสร้าง scroll container ใหม่ ทำให้ navbar sticky พัง */
+  /* clip เนเธกเนเนเธเน hidden โ€” hidden เธเธฐเธชเธฃเนเธฒเธ scroll container เนเธซเธกเน เธ—เธณเนเธซเน navbar sticky เธเธฑเธ */
   overflow-x: clip;
 }
 
@@ -31,7 +31,7 @@ body {
   box-sizing: border-box;
 }
 
-/* ── Shared section header pattern ───────────────────────── */
+/* โ”€โ”€ Shared section header pattern โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€ */
 .section-eyebrow {
   text-align: center;
   font-size: 0.72rem;
@@ -51,8 +51,8 @@ body {
   margin-bottom: 8px;
 }
 
-/* ช่องไฟใต้หัวข้อเดิมมาจาก .section-sub (margin-bottom 40px) พอถอดคำอธิบายออก
-   หัวข้อที่ไม่มีอะไรตามหลังต้องรับระยะนั้นมาเอง ไม่งั้นหัวข้อจะไปติดกับเนื้อหา */
+/* เธเนเธญเธเนเธเนเธ•เนเธซเธฑเธงเธเนเธญเน€เธ”เธดเธกเธกเธฒเธเธฒเธ .section-sub (margin-bottom 40px) เธเธญเธ–เธญเธ”เธเธณเธญเธเธดเธเธฒเธขเธญเธญเธ
+   เธซเธฑเธงเธเนเธญเธ—เธตเนเนเธกเนเธกเธตเธญเธฐเนเธฃเธ•เธฒเธกเธซเธฅเธฑเธเธ•เนเธญเธเธฃเธฑเธเธฃเธฐเธขเธฐเธเธฑเนเธเธกเธฒเน€เธญเธ เนเธกเนเธเธฑเนเธเธซเธฑเธงเธเนเธญเธเธฐเนเธเธ•เธดเธ”เธเธฑเธเน€เธเธทเนเธญเธซเธฒ */
 .section-heading:last-child {
   margin-bottom: 44px;
 }
@@ -77,8 +77,8 @@ body {
   pointer-events: none;
 }
 
-/* ── Shared card treatment — layered shadow + inset highlight for depth,
-     instead of a flat neon-glow border (reads less templated/AI-generic) ── */
+/* โ”€โ”€ Shared card treatment โ€” layered shadow + inset highlight for depth,
+     instead of a flat neon-glow border (reads less templated/AI-generic) โ”€โ”€ */
 .uv-card {
   transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.32s ease, box-shadow 0.32s ease;
   box-shadow:
@@ -95,8 +95,8 @@ body {
     0 0 0 1px rgba(124, 111, 247, 0.25);
 }
 
-/* ── Scroll reveal ───────────────────────────────────────── */
-/* translate3d + opacity เท่านั้น = งานทั้งหมดอยู่บน compositor ไม่แตะ layout/paint */
+/* โ”€โ”€ Scroll reveal โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€ */
+/* translate3d + opacity เน€เธ—เนเธฒเธเธฑเนเธ = เธเธฒเธเธ—เธฑเนเธเธซเธกเธ”เธญเธขเธนเนเธเธ compositor เนเธกเนเนเธ•เธฐ layout/paint */
 .reveal {
   opacity: 0;
   transform: translate3d(0, 24px, 0);
@@ -104,7 +104,7 @@ body {
               transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
   backface-visibility: hidden;
 }
-/* will-change เฉพาะตัวที่ยังไม่โผล่ — ถอนออกทันทีที่จบ จะได้ไม่กิน GPU memory ทั้งหน้า */
+/* will-change เน€เธเธเธฒเธฐเธ•เธฑเธงเธ—เธตเนเธขเธฑเธเนเธกเนเนเธเธฅเน โ€” เธ–เธญเธเธญเธญเธเธ—เธฑเธเธ—เธตเธ—เธตเนเธเธ เธเธฐเนเธ”เนเนเธกเนเธเธดเธ GPU memory เธ—เธฑเนเธเธซเธเนเธฒ */
 .reveal:not(.is-visible) {
   will-change: opacity, transform;
 }
@@ -114,8 +114,8 @@ body {
   will-change: auto;
 }
 
-/* เบราว์เซอร์ที่รองรับ scroll-driven animation จะผูกอนิเมชันกับตำแหน่งสกอลล์โดยตรง
-   รันบน compositor thread ไม่ผ่าน main thread เลย → ลื่นเต็มเฟรมเรตจอ */
+/* เน€เธเธฃเธฒเธงเนเน€เธเธญเธฃเนเธ—เธตเนเธฃเธญเธเธฃเธฑเธ scroll-driven animation เธเธฐเธเธนเธเธญเธเธดเน€เธกเธเธฑเธเธเธฑเธเธ•เธณเนเธซเธเนเธเธชเธเธญเธฅเธฅเนเนเธ”เธขเธ•เธฃเธ
+   เธฃเธฑเธเธเธ compositor thread เนเธกเนเธเนเธฒเธ main thread เน€เธฅเธข โ’ เธฅเธทเนเธเน€เธ•เนเธกเน€เธเธฃเธกเน€เธฃเธ•เธเธญ */
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
     .reveal {
@@ -132,13 +132,13 @@ body {
   to   { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 
-/* ล็อกสกอลล์ตอนเปิด modal — ใช้ overflow-y เท่านั้น เพื่อไม่ให้ทับ overflow-x: clip */
+/* เธฅเนเธญเธเธชเธเธญเธฅเธฅเนเธ•เธญเธเน€เธเธดเธ” modal โ€” เนเธเน overflow-y เน€เธ—เนเธฒเธเธฑเนเธ เน€เธเธทเนเธญเนเธกเนเนเธซเนเธ—เธฑเธ overflow-x: clip */
 body.modal-open {
   overflow-y: hidden;
 }
 
-/* สำคัญ: พอสกอลล์ถูกล็อก view() timeline จะไม่มีระยะให้คำนวณ ทุก .reveal เลยรีเซ็ตกลับไป
-   opacity: 0 = เนื้อหาทั้งหน้าหายวับ ต้องหยุดอนิเมชันแล้วตรึงไว้ที่สถานะปลายทาง */
+/* เธชเธณเธเธฑเธ: เธเธญเธชเธเธญเธฅเธฅเนเธ–เธนเธเธฅเนเธญเธ view() timeline เธเธฐเนเธกเนเธกเธตเธฃเธฐเธขเธฐเนเธซเนเธเธณเธเธงเธ“ เธ—เธธเธ .reveal เน€เธฅเธขเธฃเธตเน€เธเนเธ•เธเธฅเธฑเธเนเธ
+   opacity: 0 = เน€เธเธทเนเธญเธซเธฒเธ—เธฑเนเธเธซเธเนเธฒเธซเธฒเธขเธงเธฑเธ เธ•เนเธญเธเธซเธขเธธเธ”เธญเธเธดเน€เธกเธเธฑเธเนเธฅเนเธงเธ•เธฃเธถเธเนเธงเนเธ—เธตเนเธชเธ–เธฒเธเธฐเธเธฅเธฒเธขเธ—เธฒเธ */
 body.modal-open .reveal {
   animation: none !important;
   opacity: 1 !important;
@@ -147,7 +147,7 @@ body.modal-open .reveal {
   will-change: auto !important;
 }
 
-/* เลเยอร์เรืองแสงถูกแคชเป็นเท็กซ์เจอร์ ไม่ต้อง rasterize blur ใหม่ทุกเฟรมตอนเลื่อน */
+/* เน€เธฅเน€เธขเธญเธฃเนเน€เธฃเธทเธญเธเนเธชเธเธ–เธนเธเนเธเธเน€เธเนเธเน€เธ—เนเธเธเนเน€เธเธญเธฃเน เนเธกเนเธ•เนเธญเธ rasterize blur เนเธซเธกเนเธ—เธธเธเน€เธเธฃเธกเธ•เธญเธเน€เธฅเธทเนเธญเธ */
 .section-glow,
 .hero-photo::before {
   transform: translateZ(0);
@@ -167,7 +167,7 @@ body.modal-open .reveal {
   }
 }
 
-/* ── Accessibility: visible keyboard focus (WCAG 2.4.7) ──── */
+/* โ”€โ”€ Accessibility: visible keyboard focus (WCAG 2.4.7) โ”€โ”€โ”€โ”€ */
 a:focus-visible,
 button:focus-visible,
 [tabindex]:focus-visible {
@@ -176,7 +176,7 @@ button:focus-visible,
   border-radius: 4px;
 }
 
-/* ── Skip-to-content link (WCAG 2.4.1 Bypass Blocks) ─────── */
+/* โ”€โ”€ Skip-to-content link (WCAG 2.4.1 Bypass Blocks) โ”€โ”€โ”€โ”€โ”€โ”€โ”€ */
 .skip-link {
   position: absolute;
   left: 1rem;
@@ -194,14 +194,14 @@ button:focus-visible,
   top: 1rem;
 }
 
-/* ── Respect reduced-motion for the auto-scrolling ticker ── */
+/* โ”€โ”€ Respect reduced-motion for the auto-scrolling ticker โ”€โ”€ */
 @media (prefers-reduced-motion: reduce) {
   .lp-ticker-row {
     animation: none !important;
   }
 }
 
-/* ── Certificate modal ───────────────────────────────────── */
+/* โ”€โ”€ Certificate modal โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€ */
 @keyframes certFadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
@@ -211,7 +211,7 @@ button:focus-visible,
   to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* ── Banner terminal-typer flourish ──────────────────────── */
+/* โ”€โ”€ Banner terminal-typer flourish โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€ */
 .terminal-chip {
   display: inline-flex;
   align-items: center;
@@ -255,7 +255,7 @@ button:focus-visible,
 }
 
 
-/* ── Banner profile photo ─────────────────────────────────── */
+/* โ”€โ”€ Banner profile photo โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€ */
 .hero-photo {
   position: relative;
   width: min(360px, 74vw);
@@ -264,7 +264,7 @@ button:focus-visible,
   isolation: isolate;
 }
 
-/* soft aura that bleeds into the banner background — no hard frame */
+/* soft aura that bleeds into the banner background โ€” no hard frame */
 .hero-photo::before {
   content: '';
   position: absolute;
@@ -297,7 +297,7 @@ button:focus-visible,
   object-position: center top;
 }
 
-/* ── Project cards → detail modal ─────────────────────────── */
+/* โ”€โ”€ Project cards โ’ detail modal โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€ */
 .project-card:focus-visible {
   outline: 2px solid var(--accent-soft);
   outline-offset: 3px;
@@ -328,181 +328,146 @@ button:focus-visible,
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background: rgba(6, 5, 16, 0.78);
+  background: rgba(3, 5, 12, 0.8);
   backdrop-filter: blur(6px);
   animation: modal-in 0.16s ease-out;
 }
 
 .project-modal {
-  position: relative;
-  width: min(820px, 100%);
+  width: min(960px, 100%);
   max-height: 88vh;
   overflow-y: auto;
-  border-radius: 20px;
   border: 1px solid rgba(124, 111, 247, 0.35);
-  background: #16112f;
-  box-shadow: 0 30px 80px rgba(4, 3, 12, 0.7);
+  border-radius: 18px;
+  background: #080d20;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.68);
   outline: none;
 }
 
-/* หน้าตามาจาก .btn-icon — ตรงนี้เหลือแค่การวางตำแหน่งทับบนภาพ */
-.project-modal-close {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  z-index: 2;
-}
-
-.project-modal-hero {
-  position: relative;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-}
-.project-modal-hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.project-modal-hero-scrim {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, #16112f 4%, rgba(22, 17, 47, 0.55) 40%, transparent 75%);
-}
-.project-modal-hero-text {
-  position: absolute;
-  left: 24px;
-  right: 24px;
-  bottom: 18px;
-}
-
-.project-modal-body {
-  display: flex;
-  flex-direction: column;
-  padding: 24px 28px 28px;
-}
-
-/* hairline divider between every section so it stops reading as one block */
-.project-modal-body > * + * {
-  margin-top: 24px;
-  padding-top: 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
-}
-.project-modal-body > .project-modal-actions {
-  border-top: none;
-  padding-top: 8px;
-}
-
-/* section heading: no uppercase, no letter-spacing — Thai needs both left alone */
-.project-modal-heading {
+.project-modal-header {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 1.02rem;
-  font-weight: 700;
-  line-height: 1.6;
-  margin-bottom: 14px;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 24px;
+  border-bottom: 1px solid rgba(151, 171, 220, 0.14);
 }
-.project-modal-heading::before {
-  content: '';
-  width: 3px;
-  height: 17px;
-  border-radius: 2px;
-  background: currentColor;
-}
-
+.project-modal-category,
 .project-modal-label {
   display: block;
-  font-size: 0.84rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.68rem;
   font-weight: 600;
-  line-height: 1.7;
-  color: #9d98cf;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
-
-.project-modal-meta p {
-  margin-top: 4px;
-  color: #eceaff;
-  font-size: 1rem;
-  line-height: 1.85;
+.project-modal-category { margin-bottom: 4px; }
+.project-modal-header h3 {
+  margin: 0;
+  color: #f8f9ff;
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 750;
 }
+.project-modal-close { flex: 0 0 auto; }
 
+.project-modal-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(300px, 1fr);
+  gap: 28px;
+  padding: 26px;
+}
+.project-modal-media .project-modal-label,
+.project-modal-content .project-modal-label { color: #7281a8; }
+.project-modal-media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  margin-top: 10px;
+  border: 1px solid rgba(151, 171, 220, 0.18);
+  border-radius: 11px;
+  object-fit: cover;
+  background: #11172a;
+}
+.project-modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.project-modal-content section { min-width: 0; }
 .project-modal-text {
-  color: #d3d1ee;
-  font-size: 1rem;
-  line-height: 2;
+  margin-top: 7px;
+  color: #d4daea;
+  font-size: 0.91rem;
+  line-height: 1.75;
 }
-
 .project-modal-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 7px;
+  margin-top: 8px;
 }
 .project-modal-list li {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  color: #d3d1ee;
-  font-size: 0.98rem;
-  line-height: 1.85;
+  gap: 9px;
+  color: #d4daea;
+  font-size: 0.88rem;
+  line-height: 1.65;
 }
 .project-modal-list .bullet {
   flex: 0 0 auto;
-  width: 7px;
-  height: 7px;
-  margin-top: 11px;
+  width: 5px;
+  height: 5px;
+  margin-top: 9px;
   border-radius: 50%;
 }
-
-.project-modal-stack {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-  gap: 20px 24px;
-}
-
-/* chips inside the modal need to be bigger than the ones on the cards */
-.project-modal-body .rounded-full {
-  font-size: 0.86rem;
-  padding: 5px 14px;
-  line-height: 1.7;
-}
-
-.project-modal-note {
-  padding: 14px 16px;
-  border-radius: 10px;
-  font-size: 0.92rem;
-  line-height: 1.85;
-  color: #c2bee8;
-  background: rgba(255, 255, 255, 0.035);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.project-modal-actions {
+.project-modal-tech {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  padding-top: 4px;
+  gap: 8px;
+  margin-top: 9px;
 }
-
-
+.project-modal-tech .rounded-full {
+  padding: 4px 11px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.73rem;
+}
+.project-modal-note {
+  padding: 10px 12px;
+  border: 1px solid rgba(151, 171, 220, 0.12);
+  border-radius: 8px;
+  color: #aeb8d2;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+.project-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 16px 24px;
+  border-top: 1px solid rgba(151, 171, 220, 0.14);
+}
+.project-modal-footer .btn { min-width: 116px; justify-content: center; }
 @keyframes modal-in {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
 
-@media (max-width: 640px) {
-  .project-modal { max-height: 92vh; border-radius: 16px; }
-  .project-modal-body { padding: 20px 18px 24px; }
-  .project-modal-body > * + * { margin-top: 20px; padding-top: 20px; }
-  .project-modal-hero { aspect-ratio: 16 / 10; }
-  .project-modal-heading { font-size: 0.98rem; }
-  .project-modal-text,
-  .project-modal-meta p { font-size: 0.96rem; }
+@media (max-width: 700px) {
+  .project-modal-backdrop { align-items: flex-start; padding: 14px; }
+  .project-modal { max-height: calc(100vh - 28px); border-radius: 14px; }
+  .project-modal-header { padding: 15px 18px; }
+  .project-modal-layout { grid-template-columns: 1fr; gap: 22px; padding: 18px; }
+  .project-modal-content { gap: 18px; }
+  .project-modal-footer { padding: 14px 18px; }
 }
 
-/* ── ปุ่ม: ระบบเดียวใช้ทั้งเว็บ ────────────────────────────
-   เดิมมีมุมโค้ง 6 ค่า (4/8/10/12/pill/วงกลม) สีหลัก 2 ค่าที่ไม่ตรงกัน
-   และขนาดตัวอักษร 5 ค่า — รวมเหลือชุดเดียว 3 ระดับความสำคัญ
-   จงใจไม่ใส่ gradient / neon glow / scale เด้ง เพราะมันคือสิ่งที่ทำให้
-   งานดู "เจนมา" ความโดดเด่นมาจากสีเดียวที่ใช้อย่างมีวินัยแทน */
+/* โ”€โ”€ เธเธธเนเธก: เธฃเธฐเธเธเน€เธ”เธตเธขเธงเนเธเนเธ—เธฑเนเธเน€เธงเนเธ โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€
+   เน€เธ”เธดเธกเธกเธตเธกเธธเธกเนเธเนเธ 6 เธเนเธฒ (4/8/10/12/pill/เธงเธเธเธฅเธก) เธชเธตเธซเธฅเธฑเธ 2 เธเนเธฒเธ—เธตเนเนเธกเนเธ•เธฃเธเธเธฑเธ
+   เนเธฅเธฐเธเธเธฒเธ”เธ•เธฑเธงเธญเธฑเธเธฉเธฃ 5 เธเนเธฒ โ€” เธฃเธงเธกเน€เธซเธฅเธทเธญเธเธธเธ”เน€เธ”เธตเธขเธง 3 เธฃเธฐเธ”เธฑเธเธเธงเธฒเธกเธชเธณเธเธฑเธ
+   เธเธเนเธเนเธกเนเนเธชเน gradient / neon glow / scale เน€เธ”เนเธ เน€เธเธฃเธฒเธฐเธกเธฑเธเธเธทเธญเธชเธดเนเธเธ—เธตเนเธ—เธณเนเธซเน
+   เธเธฒเธเธ”เธน "เน€เธเธเธกเธฒ" เธเธงเธฒเธกเนเธ”เธ”เน€เธ”เนเธเธกเธฒเธเธฒเธเธชเธตเน€เธ”เธตเธขเธงเธ—เธตเนเนเธเนเธญเธขเนเธฒเธเธกเธตเธงเธดเธเธฑเธขเนเธ—เธ */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -525,7 +490,7 @@ button:focus-visible,
 .btn-sm { padding: 8px 15px; font-size: 0.8125rem; gap: 8px; }
 .btn-lg { padding: 14px 26px; font-size: 0.9375rem; }
 
-/* หนึ่งหน้าจอควรมีปุ่มนี้ตัวเดียว — ถ้ามีสองตัวก็ไม่มีอะไรโดดเด่น */
+/* เธซเธเธถเนเธเธซเธเนเธฒเธเธญเธเธงเธฃเธกเธตเธเธธเนเธกเธเธตเนเธ•เธฑเธงเน€เธ”เธตเธขเธง โ€” เธ–เนเธฒเธกเธตเธชเธญเธเธ•เธฑเธงเธเนเนเธกเนเธกเธตเธญเธฐเนเธฃเนเธ”เธ”เน€เธ”เนเธ */
 .btn-primary {
   background: var(--accent);
   color: #fff;
@@ -567,7 +532,7 @@ button:focus-visible,
   transform: none;
 }
 
-/* ลูกศรเป็นลายเซ็นของเว็บ ใช้เฉพาะ CTA หลัก ไม่หว่านทุกปุ่ม */
+/* เธฅเธนเธเธจเธฃเน€เธเนเธเธฅเธฒเธขเน€เธเนเธเธเธญเธเน€เธงเนเธ เนเธเนเน€เธเธเธฒเธฐ CTA เธซเธฅเธฑเธ เนเธกเนเธซเธงเนเธฒเธเธ—เธธเธเธเธธเนเธก */
 .btn-arrow {
   width: 13px;
   height: 13px;
@@ -578,7 +543,7 @@ button:focus-visible,
 }
 .btn:hover .btn-arrow { transform: rotate(45deg) translate(2px, -2px); }
 
-/* ปุ่มไอคอนล้วน — ปิด modal, เลื่อนขึ้นบน */
+/* เธเธธเนเธกเนเธญเธเธญเธเธฅเนเธงเธ โ€” เธเธดเธ” modal, เน€เธฅเธทเนเธญเธเธเธถเนเธเธเธ */
 .btn-icon {
   display: inline-flex;
   align-items: center;

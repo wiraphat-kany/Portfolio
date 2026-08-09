@@ -21,14 +21,14 @@ const skills = [
   { name: 'SQL', cat: 'database', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
   { name: 'MongoDB', cat: 'database', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
   { name: 'Firebase', cat: 'database', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg' },
-  { name: 'Git', cat: 'tools', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
+
   { name: 'GitHub', cat: 'tools', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg', invert: true },
   { name: 'Figma', cat: 'tools', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' },
   { name: 'Postman', cat: 'tools', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg' },
   { name: 'Unity', cat: 'tools', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg', invert: true },
   { name: 'Photoshop', cat: 'tools', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-original.svg'},
-  { name: 'ClickFunnels', cat: 'tools', emoji: '🔧' },
-  { name: 'Apps Script', cat: 'tools', emoji: '📋' },
+  { name: 'ClickFunnels', cat: 'tools', emoji: '๐”ง' },
+  { name: 'Apps Script', cat: 'tools', emoji: '๐“' },
 ]
 
 

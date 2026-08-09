@@ -85,10 +85,6 @@
       "image": "/images/lp-banner-photo/pc/21.webp"
     },
     {
-      "id": 22,
-      "image": "/images/lp-banner-photo/pc/22.webp"
-    },
-    {
       "id": 23,
       "image": "/images/lp-banner-photo/pc/23.webp"
     },
@@ -409,10 +405,6 @@
       "image": "/images/lp-banner-photo/pc/102.webp"
     },
     {
-      "id": 103,
-      "image": "/images/lp-banner-photo/pc/103.webp"
-    },
-    {
       "id": 104,
       "image": "/images/lp-banner-photo/pc/104.webp"
     },
@@ -573,10 +565,6 @@
     {
       "id": 38,
       "image": "/images/lp-banner-photo/sp/38.webp"
-    },
-    {
-      "id": 39,
-      "image": "/images/lp-banner-photo/sp/39.webp"
     },
     {
       "id": 40,
@@ -779,10 +767,6 @@
       "image": "/images/lp-banner-photo/sp/90.webp"
     },
     {
-      "id": 91,
-      "image": "/images/lp-banner-photo/sp/91.webp"
-    },
-    {
       "id": 92,
       "image": "/images/lp-banner-photo/sp/92.webp"
     },
@@ -924,10 +908,6 @@
       {
         "src": "/images/lp-banner-photo/pc/21.webp",
         "label": "PC Design 21"
-      },
-      {
-        "src": "/images/lp-banner-photo/pc/22.webp",
-        "label": "PC Design 22"
       },
       {
         "src": "/images/lp-banner-photo/pc/23.webp",
@@ -1250,10 +1230,6 @@
         "label": "PC Design 102"
       },
       {
-        "src": "/images/lp-banner-photo/pc/103.webp",
-        "label": "PC Design 103"
-      },
-      {
         "src": "/images/lp-banner-photo/pc/104.webp",
         "label": "PC Design 104"
       },
@@ -1414,10 +1390,6 @@
       {
         "src": "/images/lp-banner-photo/sp/38.webp",
         "label": "Mobile Design 38"
-      },
-      {
-        "src": "/images/lp-banner-photo/sp/39.webp",
-        "label": "Mobile Design 39"
       },
       {
         "src": "/images/lp-banner-photo/sp/40.webp",
@@ -1618,10 +1590,6 @@
       {
         "src": "/images/lp-banner-photo/sp/90.webp",
         "label": "Mobile Design 90"
-      },
-      {
-        "src": "/images/lp-banner-photo/sp/91.webp",
-        "label": "Mobile Design 91"
       },
       {
         "src": "/images/lp-banner-photo/sp/92.webp",
