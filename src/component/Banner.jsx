@@ -109,7 +109,9 @@ function Banner() {
             </a>
 
             <a
-              href="#certificates"
+              href="https://drive.google.com/file/d/1ZeTVPKS6frJhfQ2zoWBnlIXhSNAXZIKc/view?usp=sharing"
+              target="_blank"
+              rel="noreferrer"
               className="btn btn-ghost btn-lg"
             >
               View Resume
