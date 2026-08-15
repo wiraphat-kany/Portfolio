@@ -94,7 +94,7 @@ function Banner() {
             className="font-semibold mt-3 mb-6"
             style={{ color: 'var(--accent-pink)', fontSize: 'clamp(1.1rem, 3.5vw, 1.9rem)' }}
           >
-            Full Stack Developer | Frontend
+            Full-Stack Developer
           </h2>
           <p className="max-w-xl text-sm sm:text-base leading-relaxed mb-6" style={{ color: 'var(--text-body)' }}>
             Architecting scalable web applications, engineering seamless user experiences, and driving continuous improvement through hands-on projects.
@@ -109,7 +109,7 @@ function Banner() {
             </a>
 
             <a
-              href="https://drive.google.com/file/d/1ZeTVPKS6frJhfQ2zoWBnlIXhSNAXZIKc/view?usp=sharing"
+              href="https://drive.google.com/file/d/1lu4TZqb7BVw8avSZ4jRZX5gRPwTd1KLN/view?usp=sharing"
               target="_blank"
               rel="noreferrer"
               className="btn btn-ghost btn-lg"
