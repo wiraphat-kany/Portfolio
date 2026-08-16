@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Reveal from './Reveal'
 
 const projects = [
@@ -121,6 +121,9 @@ function ProjectCard({ project, delay }) {
 }
 
 function Gamedeveloper() {
+  const [showAll, setShowAll] = useState(false)
+  const visibleProjects = showAll ? projects : projects.slice(0, 3)
+
   return (
     <section id="game-projects" className="relative py-20 md:py-24 overflow-hidden" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <div className="section-glow" />
@@ -130,11 +133,24 @@ function Gamedeveloper() {
           <h2 className="section-heading">Game Development Projects</h2>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project, i) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {visibleProjects.map((project, i) => (
             <ProjectCard key={i} project={project} delay={i * 80} />
           ))}
         </div>
+
+        {projects.length > 3 && (
+          <div className="flex justify-center mt-10">
+            <button
+              type="button"
+              onClick={() => setShowAll((current) => !current)}
+              className="btn btn-primary px-7 py-3"
+              aria-expanded={showAll}
+            >
+              {showAll ? "Show Fewer Projects" : "View More Projects"}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   )
