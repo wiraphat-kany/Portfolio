@@ -10,10 +10,10 @@ const projects = [
     platform: "Mobile Android",
     keyRoles: "Developer",
     details: [
-      "Game Developer.",
-      "API Data with Firebase.",
-      "API Dall-e By OpenAI.",
-      "Wrote C# scripts : Login, Upload Image, Gallery",
+      "Game development.",
+      "Integrated Firebase for application data.",
+      "Integrated the OpenAI DALL-E API.",
+      "Wrote C# scripts for login, image uploads, and the gallery.",
     ],
     accent: "#7C6FF7",
   },
@@ -21,15 +21,54 @@ const projects = [
     title: "Project : Running Away",
     period: "August 2022 - November 2022",
     subject: "Subject : Artificial Intelligence for Games",
-    videoUrl: "/video/FrenzyShoot.mp4",
+    videoUrl: "/video/Gameplay.mp4",
     platform: "PC",
-    keyRoles: "Project Leader, Object Design, Developer",
+    keyRoles: "Project Leader, Object Designer, and Developer",
     details: [
-      "2D Art : Object and Environment.",
-      "Design.",
-      "Level Design.",
+      "Created 2D artwork for objects and environments.",
+      "Designed the game levels.",
     ],
     accent: "#38BDF8",
+  },
+  {
+    title: "Project : Knight Adventure",
+    period: "March 2022 - May 2022",
+    subject: "Subject : Game Programming",
+    videoUrl: "/video/KnightAdventure.mp4",
+    platform: "PC",
+    keyRoles: "Project Leader, Planner, Coordinator, Tester, and GDD Writer",
+    details: [
+      "Created 2D artwork, the game layout, and UX/UI.",
+      "Wrote C# scripts for the menu, health bar, scenes, traps, and respawn system.",
+      "Selected background music and sound effects.",
+    ],
+    accent: "#F59E0B",
+  },
+  {
+    title: "Project : Milky Way",
+    period: "March 2022",
+    subject: "Subject : Object-Oriented Programming",
+    videoUrl: "/video/MilkyWay.mp4",
+    platform: "PC",
+    keyRoles: "Project Leader, Planner, Coordinator, and Tester",
+    details: [
+      "Designed the game.",
+      "Wrote C# scripts for the menu, score, scenes, and respawn system.",
+    ],
+    accent: "#EC4899",
+  },
+  {
+    title: "Project : Little Duck",
+    period: "January 2022 - February 2022",
+    subject: "Subject : Object-Oriented Programming",
+    videoUrl: "/video/LittleDuck.mp4",
+    platform: "PC",
+    keyRoles: "Project Leader, Planner, Coordinator, and Tester",
+    details: [
+      "Designed the game.",
+      "Designed the game levels.",
+    ],
+    accent: "#22C55E",
   },
 ]
 
@@ -43,9 +82,7 @@ function ProjectCard({ project, delay }) {
         onMouseLeave={(e) => (e.currentTarget.style.borderColor = `${project.accent}33`)}
       >
         <div className="h-[3px] w-full" style={{ background: `linear-gradient(90deg, ${project.accent}, ${project.accent}33)` }} />
-
-        {/* กล่องวิดีโอสูงคงที่เท่ากันทุกการ์ด + object-contain กันภาพยืด/ครอปแปลก
-            เพราะวิดีโอสองคลิปสัดส่วนต่างกันมาก (แนวตั้ง 720x1616 กับแนวนอน 1920x1080) */}
+        {/* A fixed media area keeps portrait and landscape videos aligned without cropping. */}
         <div className="relative w-full h-56 sm:h-64 md:h-72 bg-black flex items-center justify-center">
           <video
             className="w-full h-full object-contain"

@@ -12,6 +12,7 @@ const projects = [
     description:
       "แพลตฟอร์มช่วยคุณครูไทยสร้างสื่อการสอนด้วย AI ทั้งแผนการสอน ใบงาน แบบทดสอบ และอินโฟกราฟิก อ้างอิงหลักสูตรแกนกลางฯ พร้อมตัวชี้วัด",
     demo: "https://thai-teacher-ai.vercel.app/",
+    actionLabel: "Visit Website",
     github: "https://github.com/wiraphat-kany/thai-teacher-ai",
     accent: "#7C6FF7",
     role: "Solo Developer — ออกแบบ UI, พัฒนา Frontend และเชื่อมต่อ AI API ทั้งหมด",
@@ -40,6 +41,7 @@ const projects = [
     description:
       "เว็บสร้าง QR Code ฟรี ปรับแต่งสีและใส่โลโก้ได้ พร้อมดาวน์โหลดไฟล์ความละเอียดสูงสำหรับใช้งานจริง ออกแบบให้ใช้ง่ายทั้งบนมือถือและเดสก์ท็อป",
     demo: "https://sweet-qr.site/",
+    actionLabel: "Visit Website",
     accent: "#E0567A",
     role: "Solo Developer — ออกแบบ UI/UX และพัฒนาทั้งระบบ",
     status: "เปิดใช้งานแล้ว",
@@ -55,7 +57,6 @@ const projects = [
       { group: "Frontend", items: ["React", "Tailwind CSS"] },
       { group: "Feature", items: ["QR Generation", "Logo Embedding"] },
     ],
-    note: "โค้ดเก็บเป็น private repository เนื่องจากมีข้อมูลการตั้งค่าที่ไม่เปิดเผย",
   },
   {
     id: 3,
@@ -265,7 +266,7 @@ function ProjectModal({ project, onClose }) {
           )}
           {project.demo && (
             <a href={project.demo} target="_blank" rel="noreferrer" className="btn btn-primary" style={{ backgroundColor: a }}>
-              Demo
+              {project.actionLabel || "Demo"}
               <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M14 5h5v5M19 5l-8 8M18 14v4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h4" />
               </svg>
