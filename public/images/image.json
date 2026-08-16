@@ -499,10 +499,6 @@
       "image": "/images/lp-banner-photo/sp/21.webp"
     },
     {
-      "id": 22,
-      "image": "/images/lp-banner-photo/sp/22.webp"
-    },
-    {
       "id": 23,
       "image": "/images/lp-banner-photo/sp/23.webp"
     },
@@ -809,10 +805,6 @@
     {
       "id": 102,
       "image": "/images/lp-banner-photo/sp/102.webp"
-    },
-    {
-      "id": 103,
-      "image": "/images/lp-banner-photo/sp/103.webp"
     },
     {
       "id": 104,
@@ -1324,10 +1316,6 @@
         "label": "Mobile Design 21"
       },
       {
-        "src": "/images/lp-banner-photo/sp/22.webp",
-        "label": "Mobile Design 22"
-      },
-      {
         "src": "/images/lp-banner-photo/sp/23.webp",
         "label": "Mobile Design 23"
       },
@@ -1634,10 +1622,6 @@
       {
         "src": "/images/lp-banner-photo/sp/102.webp",
         "label": "Mobile Design 102"
-      },
-      {
-        "src": "/images/lp-banner-photo/sp/103.webp",
-        "label": "Mobile Design 103"
       },
       {
         "src": "/images/lp-banner-photo/sp/104.webp",
