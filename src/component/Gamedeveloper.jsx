@@ -28,7 +28,7 @@ const projects = [
       "Created 2D artwork for objects and environments.",
       "Designed the game levels.",
     ],
-    accent: "#38BDF8",
+    accent: "#7C6FF7",
   },
   {
     title: "Project : Knight Adventure",
@@ -42,7 +42,7 @@ const projects = [
       "Wrote C# scripts for the menu, health bar, scenes, traps, and respawn system.",
       "Selected background music and sound effects.",
     ],
-    accent: "#F59E0B",
+    accent: "#7C6FF7",
   },
   {
     title: "Project : Milky Way",
@@ -55,7 +55,7 @@ const projects = [
       "Designed the game.",
       "Wrote C# scripts for the menu, score, scenes, and respawn system.",
     ],
-    accent: "#EC4899",
+    accent: "#7C6FF7",
   },
   {
     title: "Project : Little Duck",
@@ -68,7 +68,7 @@ const projects = [
       "Designed the game.",
       "Designed the game levels.",
     ],
-    accent: "#22C55E",
+    accent: "#7C6FF7",
   },
 ]
 
@@ -77,7 +77,7 @@ function ProjectCard({ project, delay }) {
     <Reveal delay={delay} className="h-full">
       <div
         className="uv-card flex flex-col rounded-2xl overflow-hidden h-full"
-        style={{ backgroundColor: '#1a1535', border: `1px solid ${project.accent}33` }}
+        style={{ backgroundColor: '#1a1535', border: `1px solid ${project.accent}33`, transform: 'none' }}
         onMouseEnter={(e) => (e.currentTarget.style.borderColor = `${project.accent}88`)}
         onMouseLeave={(e) => (e.currentTarget.style.borderColor = `${project.accent}33`)}
       >
@@ -127,7 +127,7 @@ function Gamedeveloper() {
   return (
     <section id="game-projects" className="relative py-20 md:py-24 overflow-hidden" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <div className="section-glow" />
-      <div className="max-w-5xl mx-auto px-6 relative">
+      <div className="max-w-7xl mx-auto px-6 relative">
         <Reveal>
           <p className="section-eyebrow">Game Development</p>
           <h2 className="section-heading">Game Development Projects</h2>
