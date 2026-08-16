@@ -135,7 +135,9 @@ function Gamedeveloper() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {visibleProjects.map((project, i) => (
-            <ProjectCard key={i} project={project} delay={i * 80} />
+            <div key={project.title} className={!showAll && i === 2 ? "hidden md:block" : ""}>
+              <ProjectCard project={project} delay={i * 80} />
+            </div>
           ))}
         </div>
 
