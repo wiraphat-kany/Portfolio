@@ -109,7 +109,7 @@ function CertModal({ cert, onClose }) {
       onClick={onClose}
     >
       <div style={s.modal} onClick={(e) => e.stopPropagation()}>
-        <button type="button" onClick={onClose} className="btn-icon" style={s.closeBtn} aria-label="ปิด">✕</button>
+        <button type="button" onClick={onClose} className="btn-icon" style={s.closeBtn} aria-label="Close">✕</button>
 
         <div style={s.modalImgWrap}>
           <img src={cert.img} alt={cert.title} style={s.modalImg} />
@@ -180,19 +180,19 @@ function Certificate() {
           {canCollapse && (
             <button
               type="button"
-              className="btn btn-subtle"
+              className="btn btn-ghost"
               onClick={() => setShown(sVal => Math.max(sVal - step, initialShow))}
             >
-              แสดงน้อยลง ↑
+              Show Less ↑
             </button>
           )}
           {hasMore && (
             <button
               type="button"
-              className="btn btn-subtle"
+              className="btn btn-ghost"
               onClick={() => setShown(sVal => Math.min(sVal + step, allCerts.length))}
             >
-              ดูเพิ่มอีก {Math.min(step, allCerts.length - shown)} ใบ
+              View {Math.min(step, allCerts.length - shown)} More
               <span style={s.counter}>{shown} / {allCerts.length}</span>
             </button>
           )}

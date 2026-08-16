@@ -76,7 +76,7 @@ function Contact() {
             className="btn btn-ghost btn-sm"
             style={copied ? { color: '#4FC97E', borderColor: 'rgba(79,201,126,0.5)' } : undefined}
           >
-            {copied ? '✓ คัดลอกอีเมลแล้ว' : 'คัดลอกอีเมล'}
+            {copied ? '✓ Email Copied' : 'Copy Email'}
           </button>
         </Reveal>
       </div>

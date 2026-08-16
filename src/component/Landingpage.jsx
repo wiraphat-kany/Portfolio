@@ -203,7 +203,7 @@ function ProjectModal({ project, onClose }) {
             <p className="project-modal-category" style={{ color: a }}>{project.category}</p>
             <h3 id="project-modal-title">{project.title}</h3>
           </div>
-          <button type="button" className="btn-icon project-modal-close" onClick={onClose} aria-label="ปิด">
+          <button type="button" className="btn-icon project-modal-close" onClick={onClose} aria-label="Close">
             <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 6l12 12M18 6L6 18" />
             </svg>

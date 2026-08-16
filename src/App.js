@@ -70,9 +70,9 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 pt-6">
           <button type="button"
             onClick={() => goToPage('index')}
-            className="btn btn-subtle"
+            className="btn btn-ghost"
           >
-            ← ย้อนกลับหน้าหลัก
+            ← Back to Home
           </button>
         </div>
         <PhotoBanner />
