@@ -89,6 +89,7 @@ function ProjectCard({ project, delay }) {
             src={project.videoUrl}
             controls
             preload="metadata"
+            onLoadedMetadata={(event) => { event.currentTarget.volume = 0.3 }}
             playsInline
           />
           <span
