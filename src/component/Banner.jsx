@@ -109,7 +109,7 @@ function Banner() {
             </a>
 
             <a
-              href="https://drive.google.com/file/d/1PfTF1EKIKA0f6gAkYtcn5AgDewQr8AUl/view?usp=sharing"
+              href="https://drive.google.com/file/d/1x3joaeiFB6Hqi4ROVJt5gQfnJEhHISjB/view?usp=sharing"
               target="_blank"
               rel="noreferrer"
               className="btn btn-ghost btn-lg"
